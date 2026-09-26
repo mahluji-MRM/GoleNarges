@@ -49,7 +49,6 @@
     z-index:0;
   }
 
-  /* ========== Navigation ========== */
   .nav{
     position:sticky;
     top:0;
@@ -202,7 +201,6 @@
     color:var(--gold);
   }
 
-  /* ========== Hero ========== */
   .hero{
     position:relative;
     display:flex;
@@ -351,7 +349,6 @@
     color:var(--text-muted);
   }
 
-  /* ========== Section ========== */
   .section{
     position:relative;
     padding:3.5rem 1rem;
@@ -404,7 +401,6 @@
     background:linear-gradient(90deg,transparent,var(--gold),transparent);
   }
 
-  /* ========== Intro ========== */
   .intro-content{
     background:linear-gradient(135deg,rgba(26,31,38,.8),rgba(15,20,25,.8));
     border:1px solid rgba(201,169,97,.2);
@@ -437,7 +433,6 @@
     font-weight:700;
   }
 
-  /* ========== Features Grid ========== */
   .features-grid{
     display:grid;
     grid-template-columns:1fr;
@@ -504,7 +499,6 @@
     line-height:1.85;
   }
 
-  /* ========== Utilities ========== */
   .utilities-grid{
     display:grid;
     grid-template-columns:1fr;
@@ -573,7 +567,6 @@
   }
   .utility-feature i{color:var(--gold);margin-top:.2rem;flex-shrink:0}
 
-  /* ========== Units ========== */
   .units-grid{
     display:grid;
     grid-template-columns:1fr;
@@ -651,7 +644,6 @@
   }
   .unit-feature i{color:var(--gold);margin-left:.4rem}
 
-  /* ========== Pricing ========== */
   .pricing-intro{
     background:linear-gradient(135deg,rgba(201,169,97,.1),rgba(201,169,97,.05));
     border:1px solid rgba(201,169,97,.3);
@@ -703,7 +695,6 @@
     color:var(--text-muted);
   }
 
-  /* ========== Floor Cards ========== */
   .floor-card{
     background:linear-gradient(135deg,rgba(26,31,38,.95),rgba(15,20,25,.95));
     border:1px solid rgba(201,169,97,.2);
@@ -820,7 +811,6 @@
   }
   .price-note strong{color:var(--gold-light)}
 
-  /* ========== Payment Section ========== */
   .payment-title-main{
     text-align:center;
     font-size:clamp(1.2rem,4vw,1.8rem);
@@ -923,7 +913,6 @@
   }
   .installment-note strong{color:var(--success)}
 
-  /* ========== Access ========== */
   .access-grid{
     display:grid;
     grid-template-columns:1fr;
@@ -963,7 +952,6 @@
     line-height:1.6;
   }
 
-  /* ========== Conclusion ========== */
   .conclusion{
     background:linear-gradient(135deg,rgba(201,169,97,.1),rgba(201,169,97,.05));
     border:1px solid rgba(201,169,97,.3);
@@ -993,7 +981,6 @@
   }
   .conclusion strong{color:var(--gold-light)}
 
-  /* ========== Footer ========== */
   .footer{
     background:linear-gradient(135deg,var(--dark-2),var(--dark));
     border-top:1px solid rgba(201,169,97,.2);
@@ -2066,7 +2053,7 @@
     var navWrapper = document.getElementById('navWrapper');
     if (!navLinks || !navWrapper) return;
 
-    /* ========== محو کردن گرادیان در انتهای لیست ========== */
+    /* ========== بخش ۱: محو کردن گرادیان در انتهای لیست ========== */
     function updateScrollState() {
       var sl = Math.abs(navLinks.scrollLeft);
       var max = navLinks.scrollWidth - navLinks.clientWidth;
@@ -2080,32 +2067,34 @@
     navLinks.addEventListener('scroll', updateScrollState, { passive: true });
     window.addEventListener('resize', updateScrollState);
 
-    /* ========== اسکرول نوار وقتی روی دکمه کلیک می‌شود ========== */
+    /* ========== بخش ۲: اسکرول افقی نوار وقتی روی دکمه کلیک می‌شود ========== */
     var allLinks = navLinks.querySelectorAll('a');
 
     allLinks.forEach(function(link) {
       link.addEventListener('click', function() {
-        // کمی تاخیر تا اسکرول پیش‌فرض صفحه شروع شود
-        setTimeout(function() {
-          // روش ۱: استفاده از scrollIntoView (استاندارد و مطمئن)
-          try {
-            link.scrollIntoView({
-              behavior: 'smooth',
-              block: 'nearest',
-              inline: 'start'
-            });
-          } catch (e) {
-            // روش ۲ (پشتیبان): محاسبه دستی
-            var linkRect = link.getBoundingClientRect();
-            var wrapperRect = navWrapper.getBoundingClientRect();
-            var shiftRight = wrapperRect.right - linkRect.right;
-            var newScroll = navLinks.scrollLeft - shiftRight;
-            var maxScroll = navLinks.scrollWidth - navLinks.clientWidth;
-            if (newScroll > 0) newScroll = 0;
-            if (newScroll < -maxScroll) newScroll = -maxScroll;
-            navLinks.scrollTo({ left: newScroll, behavior: 'smooth' });
-          }
-        }, 30);
+        // فقط اگر نوار قابلیت اسکرول افقی داشته باشد (موبایل/تبلت)
+        var maxScroll = navLinks.scrollWidth - navLinks.clientWidth;
+        if (maxScroll <= 5) return; // روی دسکتاپ هیچ کاری نکن
+
+        // محاسبه موقعیت دکمه نسبت به نوار
+        var linkRect = link.getBoundingClientRect();
+        var wrapperRect = navWrapper.getBoundingClientRect();
+
+        // فاصله لبه راست دکمه از لبه راست نوار
+        var shift = wrapperRect.right - linkRect.right;
+
+        // در RTL، برای اینکه دکمه به لبه راست برسد باید scrollLeft کاهش یابد
+        var newScroll = navLinks.scrollLeft - shift;
+
+        // محدود کردن به محدوده مجاز
+        if (newScroll > 0) newScroll = 0;
+        if (newScroll < -maxScroll) newScroll = -maxScroll;
+
+        // فقط نوار رو افقی اسکرول کن (بدون دست زدن به اسکرول عمودی صفحه)
+        navLinks.scrollTo({
+          left: newScroll,
+          behavior: 'smooth'
+        });
       });
     });
   })();
