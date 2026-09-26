@@ -22,10 +22,11 @@
     --accent:#d4af37;
     --success:#10b981;
     --danger:#ef4444;
+    --danger-glow:rgba(239,68,68,.5);
     --gradient-gold:linear-gradient(135deg,#c9a961 0%,#e8d5a0 50%,#c9a961 100%);
-    --gradient-dark:linear-gradient(135deg,#0f1419 0%,#1a1f26 100%);
+    --gradient-danger:linear-gradient(135deg,#ef4444 0%,#dc2626 50%,#ef4444 100%);
     --shadow-gold:0 10px 40px rgba(201,169,97,.25);
-    --shadow-lg:0 25px 50px -12px rgba(0,0,0,.5);
+    --shadow-danger:0 10px 40px rgba(239,68,68,.4);
   }
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -791,25 +792,78 @@
   }
   .all-sold i{margin:0 .3rem}
 
+  /* ===== PRICE NOTE - DISTINCT STYLE ===== */
   .price-note{
-    background:linear-gradient(135deg,rgba(201,169,97,.15),rgba(201,169,97,.05));
-    border:1px solid var(--gold);
-    border-radius:12px;
-    padding:1rem 1.1rem;
-    margin:1.5rem 0;
+    background:linear-gradient(135deg,rgba(239,68,68,.15),rgba(220,38,38,.08));
+    border:2px solid var(--danger);
+    border-radius:16px;
+    padding:1.3rem 1.2rem;
+    margin:2rem 0;
     display:flex;
-    align-items:flex-start;
-    gap:.7rem;
-    font-size:.85rem;
+    align-items:center;
+    gap:1rem;
+    font-size:.95rem;
+    font-weight:700;
     line-height:1.7;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 8px 30px rgba(239,68,68,.35);
+    animation:pricePulse 2.5s ease-in-out infinite;
+  }
+  .price-note::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:6px;
+    height:100%;
+    background:var(--gradient-danger);
+  }
+  .price-note::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at 80% 50%,rgba(239,68,68,.15) 0%,transparent 60%);
+    pointer-events:none;
   }
   .price-note i{
-    font-size:1.2rem;
-    color:var(--gold);
+    font-size:1.7rem;
+    color:#fff;
     flex-shrink:0;
-    margin-top:.15rem;
+    text-shadow:0 0 15px var(--danger-glow);
+    animation:iconBounce 2.5s ease-in-out infinite;
+    position:relative;
+    z-index:1;
   }
-  .price-note strong{color:var(--gold-light)}
+  .price-note > div{
+    position:relative;
+    z-index:1;
+  }
+  .price-note strong{
+    color:#fff;
+    font-weight:900;
+  }
+  .price-note .date-highlight{
+    display:inline-block;
+    background:var(--gradient-danger);
+    color:#fff;
+    padding:.15rem .75rem;
+    border-radius:8px;
+    font-weight:900;
+    margin-right:.3rem;
+    box-shadow:0 4px 12px rgba(239,68,68,.5);
+    font-size:1rem;
+    letter-spacing:.5px;
+  }
+  @keyframes pricePulse{
+    0%,100%{box-shadow:0 8px 30px rgba(239,68,68,.35);}
+    50%{box-shadow:0 8px 40px rgba(239,68,68,.6);}
+  }
+  @keyframes iconBounce{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.15);}
+  }
 
   .payment-title-main{
     text-align:center;
@@ -1167,6 +1221,10 @@
     .footer-slogan{font-size:.88rem;}
     .base-prices{grid-template-columns:1fr;}
     .payment-card-circle{width:70px;height:70px;font-size:1.4rem;}
+
+    .price-note{font-size:.82rem;padding:1rem .9rem;}
+    .price-note i{font-size:1.4rem;}
+    .price-note .date-highlight{font-size:.85rem;padding:.1rem .55rem;}
   }
 
   @media(hover:none){
@@ -1726,22 +1784,22 @@
   <div class="base-prices">
     <div class="base-price">
       <div class="base-price-label">تیپ ۱</div>
-      <div class="base-price-value">۶۲۵ میلیون تومان / مترمربع</div>
+      <div class="base-price-value">۶۵۰ میلیون تومان / مترمربع</div>
       <div class="base-price-area">۱۵۳ مترمربع</div>
     </div>
     <div class="base-price">
       <div class="base-price-label">تیپ ۲</div>
-      <div class="base-price-value">۶۰۰ میلیون تومان / مترمربع</div>
+      <div class="base-price-value">۶۲۵ میلیون تومان / مترمربع</div>
       <div class="base-price-area">۱۲۵ مترمربع</div>
     </div>
     <div class="base-price">
       <div class="base-price-label">تیپ ۳</div>
-      <div class="base-price-value">۶۰۰ میلیون تومان / مترمربع</div>
+      <div class="base-price-value">۶۲۵ میلیون تومان / مترمربع</div>
       <div class="base-price-area">۱۲۳ مترمربع</div>
     </div>
     <div class="base-price">
       <div class="base-price-label">تیپ ۴</div>
-      <div class="base-price-value">۵۷۵ میلیون تومان / مترمربع</div>
+      <div class="base-price-value">۶۰۰ میلیون تومان / مترمربع</div>
       <div class="base-price-area">۱۰۷ مترمربع</div>
     </div>
   </div>
@@ -1754,14 +1812,14 @@
         <div class="unit-detail">
           <div class="unit-number">واحد ۱۱</div>
           <div class="unit-meta">تیپ ۱ | ۱۵۳ مترمربع</div>
-          <div class="unit-meta">هر متر: ۶۲۵ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۹۵.۶۲۵ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۶۵۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۹۹.۴۵۰ میلیارد تومان</div>
         </div>
         <div class="unit-detail">
           <div class="unit-number">واحد ۱۲</div>
           <div class="unit-meta">تیپ ۲ | ۱۲۵ مترمربع</div>
-          <div class="unit-meta">هر متر: ۶۰۰ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۷۵.۰۰۰ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۶۲۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۷۸.۱۲۵ میلیارد تومان</div>
         </div>
         <div class="unit-detail sold">
           <div class="unit-number">واحد ۱۳</div>
@@ -1771,8 +1829,8 @@
         <div class="unit-detail">
           <div class="unit-number">واحد ۱۴</div>
           <div class="unit-meta">تیپ ۴ | متراژ مؤثر: ۱۴۲ مترمربع</div>
-          <div class="unit-meta">هر متر: ۵۷۵ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۸۱.۶۵۰ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۶۰۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۸۵.۲۰۰ میلیارد تومان</div>
           <div class="unit-special">
             <i class="fas fa-star"></i> دارای حدود ۸۰ مترمربع حیاط اختصاصی (۳۵ مترمربع به متراژ مؤثر اضافه شده است)
           </div>
@@ -1814,8 +1872,8 @@
         <div class="unit-detail">
           <div class="unit-number">واحد ۵۴</div>
           <div class="unit-meta">تیپ ۴ | ۱۰۷ مترمربع</div>
-          <div class="unit-meta">هر متر: ۶۵۵ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۷۰.۰۸۵ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۶۸۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۷۲.۷۶۰ میلیارد تومان</div>
         </div>
       </div>
     </div>
@@ -1839,14 +1897,14 @@
         <div class="unit-detail">
           <div class="unit-number">واحد ۶۳</div>
           <div class="unit-meta">تیپ ۳ | ۱۲۳ مترمربع</div>
-          <div class="unit-meta">هر متر: ۷۰۵ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۸۶.۷۱۵ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۷۳۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۹۰.۴۰۵ میلیارد تومان</div>
         </div>
         <div class="unit-detail">
           <div class="unit-number">واحد ۶۴</div>
           <div class="unit-meta">تیپ ۴ | ۱۰۷ مترمربع</div>
-          <div class="unit-meta">هر متر: ۶۷۵ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۷۲.۲۲۵ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۷۰۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۷۵.۴۳۵ میلیارد تومان</div>
         </div>
       </div>
     </div>
@@ -1860,26 +1918,26 @@
         <div class="unit-detail">
           <div class="unit-number">واحد ۷۱</div>
           <div class="unit-meta">تیپ ۱ | ۱۵۳ مترمربع</div>
-          <div class="unit-meta">هر متر: ۷۶۰ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۱۱۶.۲۸۰ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۷۹۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۱۲۱.۶۳۵ میلیارد تومان</div>
         </div>
         <div class="unit-detail">
           <div class="unit-number">واحد ۷۲</div>
           <div class="unit-meta">تیپ ۲ | ۱۲۵ مترمربع</div>
-          <div class="unit-meta">هر متر: ۷۳۰ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۹۱.۲۵۰ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۷۶۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۹۵.۰۰۰ میلیارد تومان</div>
         </div>
         <div class="unit-detail">
           <div class="unit-number">واحد ۷۳</div>
           <div class="unit-meta">تیپ ۳ | ۱۲۳ مترمربع</div>
-          <div class="unit-meta">هر متر: ۷۳۰ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۸۹.۷۹۰ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۷۶۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۹۳.۴۸۰ میلیارد تومان</div>
         </div>
         <div class="unit-detail">
           <div class="unit-number">واحد ۷۴</div>
           <div class="unit-meta">تیپ ۴ | ۱۰۷ مترمربع</div>
-          <div class="unit-meta">هر متر: ۷۰۰ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۷۴.۹۰۰ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۷۳۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۷۸.۱۱۰ میلیارد تومان</div>
         </div>
       </div>
     </div>
@@ -1893,26 +1951,26 @@
         <div class="unit-detail">
           <div class="unit-number">واحد ۸۱</div>
           <div class="unit-meta">تیپ ۱ | ۱۵۳ مترمربع</div>
-          <div class="unit-meta">هر متر: ۷۸۵ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۱۲۰.۱۰۵ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۸۲۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۱۲۵.۴۶۰ میلیارد تومان</div>
         </div>
         <div class="unit-detail">
           <div class="unit-number">واحد ۸۲</div>
           <div class="unit-meta">تیپ ۲ | ۱۲۵ مترمربع</div>
-          <div class="unit-meta">هر متر: ۷۵۵ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۹۴.۳۷۵ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۷۸۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۹۸.۱۲۵ میلیارد تومان</div>
         </div>
         <div class="unit-detail">
           <div class="unit-number">واحد ۸۳</div>
           <div class="unit-meta">تیپ ۳ | ۱۲۳ مترمربع</div>
-          <div class="unit-meta">هر متر: ۷۵۵ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۹۲.۸۶۵ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۷۸۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۹۶.۵۵۵ میلیارد تومان</div>
         </div>
         <div class="unit-detail">
           <div class="unit-number">واحد ۸۴</div>
           <div class="unit-meta">تیپ ۴ | ۱۰۷ مترمربع</div>
-          <div class="unit-meta">هر متر: ۷۲۵ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۷۷.۵۷۵ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۷۵۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۸۰.۷۸۵ میلیارد تومان</div>
         </div>
       </div>
     </div>
@@ -1926,34 +1984,37 @@
         <div class="unit-detail">
           <div class="unit-number">واحد ۹۱</div>
           <div class="unit-meta">تیپ ۱ | ۱۵۳ مترمربع</div>
-          <div class="unit-meta">هر متر: ۸۱۰ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۱۲۳.۹۳۰ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۸۴۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۱۲۹.۲۸۵ میلیارد تومان</div>
         </div>
         <div class="unit-detail">
           <div class="unit-number">واحد ۹۲</div>
           <div class="unit-meta">تیپ ۲ | ۱۲۵ مترمربع</div>
-          <div class="unit-meta">هر متر: ۷۸۰ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۹۷.۵۰۰ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۸۱۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۱۰۱.۲۵۰ میلیارد تومان</div>
         </div>
         <div class="unit-detail">
           <div class="unit-number">واحد ۹۳</div>
           <div class="unit-meta">تیپ ۳ | ۱۲۳ مترمربع</div>
-          <div class="unit-meta">هر متر: ۷۸۰ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۹۵.۹۴۰ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۸۱۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۹۹.۶۳۰ میلیارد تومان</div>
         </div>
         <div class="unit-detail">
           <div class="unit-number">واحد ۹۴</div>
           <div class="unit-meta">تیپ ۴ | ۱۰۷ مترمربع</div>
-          <div class="unit-meta">هر متر: ۷۵۰ میلیون تومان</div>
-          <div class="unit-price">قیمت کل: ۸۰.۲۵۰ میلیارد تومان</div>
+          <div class="unit-meta">هر متر: ۷۸۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۸۳.۴۶۰ میلیارد تومان</div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- PRICE NOTE - DISTINCT -->
   <div class="price-note">
-    <i class="fas fa-info-circle"></i>
-    <div><strong>توجه:</strong> قیمت‌های فوق کاملاً مقطوع و تا <strong>۳۰ خرداد ۱۴۰۵</strong> اعتبار دارد.</div>
+    <i class="fas fa-exclamation-circle"></i>
+    <div>
+      <strong>توجه:</strong> قیمت‌های فوق کاملاً مقطوع و تا <span class="date-highlight">۳۰ مرداد ۱۴۰۵</span> اعتبار دارد.
+    </div>
   </div>
 
   <!-- Payment Section -->
@@ -2053,7 +2114,6 @@
     var navWrapper = document.getElementById('navWrapper');
     if (!navLinks || !navWrapper) return;
 
-    /* ========== بخش ۱: محو کردن گرادیان در انتهای لیست ========== */
     function updateScrollState() {
       var sl = Math.abs(navLinks.scrollLeft);
       var max = navLinks.scrollWidth - navLinks.clientWidth;
@@ -2067,30 +2127,21 @@
     navLinks.addEventListener('scroll', updateScrollState, { passive: true });
     window.addEventListener('resize', updateScrollState);
 
-    /* ========== بخش ۲: اسکرول افقی نوار وقتی روی دکمه کلیک می‌شود ========== */
     var allLinks = navLinks.querySelectorAll('a');
 
     allLinks.forEach(function(link) {
       link.addEventListener('click', function() {
-        // فقط اگر نوار قابلیت اسکرول افقی داشته باشد (موبایل/تبلت)
         var maxScroll = navLinks.scrollWidth - navLinks.clientWidth;
-        if (maxScroll <= 5) return; // روی دسکتاپ هیچ کاری نکن
+        if (maxScroll <= 5) return;
 
-        // محاسبه موقعیت دکمه نسبت به نوار
         var linkRect = link.getBoundingClientRect();
         var wrapperRect = navWrapper.getBoundingClientRect();
-
-        // فاصله لبه راست دکمه از لبه راست نوار
         var shift = wrapperRect.right - linkRect.right;
-
-        // در RTL، برای اینکه دکمه به لبه راست برسد باید scrollLeft کاهش یابد
         var newScroll = navLinks.scrollLeft - shift;
 
-        // محدود کردن به محدوده مجاز
         if (newScroll > 0) newScroll = 0;
         if (newScroll < -maxScroll) newScroll = -maxScroll;
 
-        // فقط نوار رو افقی اسکرول کن (بدون دست زدن به اسکرول عمودی صفحه)
         navLinks.scrollTo({
           left: newScroll,
           behavior: 'smooth'
