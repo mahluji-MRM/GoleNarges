@@ -49,7 +49,7 @@
     z-index:0;
   }
 
-  /* ========== Navigation (Compact for Mobile ≤80px with Scroll Hint) ========== */
+  /* ========== Navigation ========== */
   .nav{
     position:sticky;
     top:0;
@@ -72,8 +72,6 @@
     gap:.4rem;
     max-height:80px;
   }
-
-  /* Wrapper نوار ناوبری با نشانگر اسکرول */
   .nav-links-wrapper{
     order:1;
     flex:1;
@@ -82,42 +80,49 @@
     max-height:80px;
     min-width:0;
   }
-
-  /* گرادیان محو در سمت چپ (نشانه وجود محتوای بیشتر در RTL) */
   .nav-links-wrapper::after{
     content:'';
     position:absolute;
     top:0;
     left:0;
     bottom:0;
-    width:45px;
-    background:linear-gradient(90deg, rgba(15,20,25,1) 0%, rgba(15,20,25,.85) 40%, transparent 100%);
+    width:85px;
+    background:linear-gradient(90deg,
+      rgba(15,20,25,1) 0%,
+      rgba(15,20,25,.95) 25%,
+      rgba(15,20,25,.75) 50%,
+      rgba(15,20,25,.4) 75%,
+      transparent 100%);
     pointer-events:none;
     z-index:3;
+    opacity:1;
+    transition:opacity .3s ease;
   }
-
-  /* فلش کوچک متحرک در سمت چپ */
   .nav-links-wrapper::before{
     content:'‹';
     position:absolute;
     top:50%;
-    left:5px;
+    left:12px;
     transform:translateY(-50%);
     color:var(--gold);
-    font-size:1.5rem;
+    font-size:1.7rem;
     font-weight:900;
     pointer-events:none;
     z-index:4;
     animation:scrollHint 1.6s ease-in-out infinite;
-    text-shadow:0 0 12px rgba(201,169,97,.9);
+    text-shadow:0 0 15px rgba(201,169,97,1);
     line-height:1;
+    opacity:1;
+    transition:opacity .3s ease;
   }
-
+  .nav-links-wrapper.at-end::before,
+  .nav-links-wrapper.at-end::after{
+    opacity:0;
+  }
   @keyframes scrollHint{
     0%,100%{transform:translateY(-50%) translateX(0);opacity:.6;}
     50%{transform:translateY(-50%) translateX(-6px);opacity:1;}
   }
-
   .nav-links{
     display:flex;
     gap:.25rem;
@@ -127,29 +132,27 @@
     overflow-y:hidden;
     -webkit-overflow-scrolling:touch;
     scrollbar-width:thin;
-    scrollbar-color:var(--gold) rgba(201,169,97,.1);
-    padding:.15rem 0 .4rem;
+    scrollbar-color:var(--gold) rgba(201,169,97,.12);
+    padding:.15rem 0 .7rem 90px;
     max-height:80px;
     height:100%;
     scroll-behavior:smooth;
   }
-
-  /* اسکرول‌بار نازک طلایی */
-  .nav-links::-webkit-scrollbar{
-    height:3px;
-  }
+  .nav-links::-webkit-scrollbar{height:7px;}
   .nav-links::-webkit-scrollbar-track{
-    background:rgba(201,169,97,.1);
-    border-radius:3px;
+    background:rgba(201,169,97,.12);
+    border-radius:7px;
+    margin:0 4px;
   }
   .nav-links::-webkit-scrollbar-thumb{
-    background:var(--gold);
-    border-radius:3px;
+    background:var(--gradient-gold);
+    border-radius:7px;
+    box-shadow:0 0 8px rgba(201,169,97,.6);
   }
   .nav-links::-webkit-scrollbar-thumb:hover{
     background:var(--gold-light);
+    box-shadow:0 0 12px rgba(201,169,97,.9);
   }
-
   .logo{
     order:2;
     display:flex;
@@ -246,7 +249,6 @@
       background-size: 100% auto;
     }
   }
-
   .hero-content{
     position:relative;
     z-index:2;
@@ -442,61 +444,50 @@
     gap:1rem;
   }
   .feature-card{
-    background:linear-gradient(135deg,rgba(26,31,38,.9),rgba(15,20,25,.9));
-    border:1px solid rgba(201,169,97,.15);
+    background:linear-gradient(135deg,rgba(26,31,38,.95),rgba(15,20,25,.95));
+    border:1px solid rgba(201,169,97,.2);
     border-radius:16px;
     padding:1.3rem;
     transition:all .4s;
     position:relative;
-    overflow:hidden;
-  }
-  .feature-card::before{
-    content:'';
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    height:3px;
-    background:var(--gradient-gold);
-    transform:scaleX(0);
-    transform-origin:right;
-    transition:transform .5s;
   }
   .feature-card:hover,
   .feature-card:active{
     transform:translateY(-5px);
-    border-color:var(--gold);
     box-shadow:var(--shadow-gold);
+    border-color:var(--gold);
   }
-  .feature-card:hover::before,
-  .feature-card:active::before{
-    transform:scaleX(1);
-    transform-origin:left;
+  .feature-header{
+    display:flex;
+    align-items:center;
+    gap:.8rem;
+    margin-bottom:1rem;
+    padding-bottom:.8rem;
+    border-bottom:1px solid rgba(201,169,97,.2);
   }
   .feature-icon{
-    width:50px;
-    height:50px;
-    background:rgba(201,169,97,.1);
-    border:1px solid rgba(201,169,97,.3);
-    border-radius:12px;
+    width:44px;
+    height:44px;
+    background:var(--gradient-gold);
+    border-radius:10px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:1.2rem;
-    color:var(--gold);
-    margin-bottom:1rem;
+    font-size:1.1rem;
+    color:var(--dark);
+    flex-shrink:0;
     transition:all .3s;
   }
   .feature-card:hover .feature-icon{
-    background:var(--gradient-gold);
-    color:var(--dark);
-    transform:rotate(-5deg) scale(1.1);
+    transform:rotate(-5deg) scale(1.05);
+    box-shadow:0 6px 20px rgba(201,169,97,.5);
   }
   .feature-title{
-    font-size:1.05rem;
+    font-size:1rem;
     font-weight:700;
     color:var(--gold-light);
-    margin-bottom:.4rem;
+    line-height:1.4;
+    margin-bottom:.2rem;
   }
   .feature-badge{
     display:inline-block;
@@ -505,12 +496,12 @@
     color:var(--gold);
     border-radius:20px;
     font-size:.7rem;
-    margin-bottom:.7rem;
+    font-weight:500;
   }
   .feature-desc{
-    color:var(--text-muted);
+    color:var(--text);
     font-size:.88rem;
-    line-height:1.75;
+    line-height:1.85;
   }
 
   /* ========== Utilities ========== */
@@ -1091,7 +1082,6 @@
     box-shadow:var(--shadow-gold);
   }
 
-  /* Animations */
   @keyframes fadeInUp{
     from{opacity:0;transform:translateY(30px)}
     to{opacity:1;transform:translateY(0)}
@@ -1101,123 +1091,97 @@
     to{opacity:1;transform:translateY(0)}
   }
 
-  /* ========== Tablet (640px+) ========== */
   @media(min-width:640px){
-    .nav{
-      padding:.5rem 0;
-      max-height:none;
-    }
-    .nav-container{
-      padding:0 1.5rem;
-      flex-wrap:wrap;
-      max-height:none;
-    }
-    /* حذف نشانگر اسکرول در تبلت و دسکتاپ */
-    .nav-links-wrapper{
-      flex:1;
-      overflow:visible;
-      max-height:none;
-    }
+    .nav{padding:.5rem 0;max-height:none;}
+    .nav-container{padding:0 1.5rem;flex-wrap:wrap;max-height:none;}
+    .nav-links-wrapper{flex:1;overflow:visible;max-height:none;}
     .nav-links-wrapper::before,
-    .nav-links-wrapper::after{
-      display:none;
-    }
-    .nav-links{
-      flex-wrap:wrap;
-      overflow-x:visible;
-      gap:.35rem;
-      padding:.15rem 0;
-    }
-    .logo-img{width:44px;height:44px}
-    .logo-text{font-size:1.2rem}
-    .nav-links a{font-size:.85rem;padding:.4rem .85rem}
+    .nav-links-wrapper::after{display:none;}
+    .nav-links{flex-wrap:wrap;overflow-x:visible;gap:.35rem;padding:.15rem 0;}
+    .logo-img{width:44px;height:44px;}
+    .logo-text{font-size:1.2rem;}
+    .nav-links a{font-size:.85rem;padding:.4rem .85rem;}
 
-    .section{padding:4.5rem 1.5rem}
-    .section-title{font-size:clamp(1.8rem,4vw,2.5rem)}
-    .section-subtitle{font-size:1rem}
+    .section{padding:4.5rem 1.5rem;}
+    .section-title{font-size:clamp(1.8rem,4vw,2.5rem);}
+    .section-subtitle{font-size:1rem;}
 
-    .features-grid{grid-template-columns:repeat(2,1fr);gap:1.2rem}
-    .utilities-grid{grid-template-columns:repeat(2,1fr);gap:1.2rem}
-    .units-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}
-    .access-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
-    .base-prices{grid-template-columns:repeat(4,1fr);gap:1rem}
-    .hero-stats{grid-template-columns:repeat(4,1fr);gap:1.2rem}
-    .hero{padding:4rem 1.5rem}
-    .payment-cards{grid-template-columns:repeat(3,1fr);gap:1.2rem}
+    .features-grid{grid-template-columns:repeat(2,1fr);gap:1.2rem;}
+    .utilities-grid{grid-template-columns:repeat(2,1fr);gap:1.2rem;}
+    .units-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+    .access-grid{grid-template-columns:repeat(2,1fr);gap:1rem;}
+    .base-prices{grid-template-columns:repeat(4,1fr);gap:1rem;}
+    .hero-stats{grid-template-columns:repeat(4,1fr);gap:1.2rem;}
+    .hero{padding:4rem 1.5rem;}
+    .payment-cards{grid-template-columns:repeat(3,1fr);gap:1.2rem;}
 
-    .unit-row{
-      grid-template-columns:repeat(2,1fr);
-      gap:.8rem;
-    }
+    .unit-row{grid-template-columns:repeat(2,1fr);gap:.8rem;}
 
-    .intro-content{padding:2rem 1.8rem}
-    .intro-content p{font-size:1rem}
-    .footer-logo-frame img{width:208px;height:160px}
-    .footer-logo{font-size:1.8rem}
-    .footer-slogan{font-size:1.1rem}
+    .intro-content{padding:2rem 1.8rem;}
+    .intro-content p{font-size:1rem;}
+    .footer-logo-frame img{width:208px;height:160px;}
+    .footer-logo{font-size:1.8rem;}
+    .footer-slogan{font-size:1.1rem;}
   }
 
-  /* ========== Desktop (900px+) ========== */
   @media(min-width:900px){
-    .nav{padding:.6rem 0;max-height:none}
-    .nav-container{padding:0 2rem;max-height:none}
-    .logo-img{width:48px;height:48px}
-    .logo-text{font-size:1.3rem}
-    .nav-links a{font-size:.9rem;padding:.45rem .95rem}
+    .nav{padding:.6rem 0;max-height:none;}
+    .nav-container{padding:0 2rem;max-height:none;}
+    .logo-img{width:48px;height:48px;}
+    .logo-text{font-size:1.3rem;}
+    .nav-links a{font-size:.9rem;padding:.45rem .95rem;}
 
-    .section{padding:5.5rem 2rem}
-    .section-title{font-size:clamp(2rem,3.5vw,3rem)}
+    .section{padding:5.5rem 2rem;}
+    .section-title{font-size:clamp(2rem,3.5vw,3rem);}
 
-    .features-grid{grid-template-columns:repeat(3,1fr)}
-    .utilities-grid{grid-template-columns:repeat(2,1fr)}
-    .units-grid{grid-template-columns:repeat(4,1fr);gap:1.8rem}
-    .access-grid{grid-template-columns:repeat(3,1fr)}
+    .features-grid{grid-template-columns:repeat(3,1fr);}
+    .utilities-grid{grid-template-columns:repeat(2,1fr);}
+    .units-grid{grid-template-columns:repeat(4,1fr);gap:1.8rem;}
+    .access-grid{grid-template-columns:repeat(3,1fr);}
 
-    .hero{padding:5rem 2rem;min-height:95vh}
-    .hero h1{font-size:clamp(2.5rem,5vw,5rem)}
-    .hero-stats{grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
-    .stat-card{padding:1.5rem}
-    .stat-icon{font-size:1.8rem}
-    .stat-value{font-size:1.8rem}
-    .stat-label{font-size:.85rem}
+    .hero{padding:5rem 2rem;min-height:95vh;}
+    .hero h1{font-size:clamp(2.5rem,5vw,5rem);}
+    .hero-stats{grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem;}
+    .stat-card{padding:1.5rem;}
+    .stat-icon{font-size:1.8rem;}
+    .stat-value{font-size:1.8rem;}
+    .stat-label{font-size:.85rem;}
 
-    .unit-row{grid-template-columns:repeat(4,1fr);gap:1rem}
+    .unit-row{grid-template-columns:repeat(4,1fr);gap:1rem;}
 
-    .intro-content{padding:3rem}
-    .conclusion{padding:3.5rem 2.5rem}
+    .intro-content{padding:3rem;}
+    .conclusion{padding:3.5rem 2.5rem;}
 
-    .footer{padding:4rem 2rem 2rem}
+    .footer{padding:4rem 2rem 2rem;}
   }
 
-  /* ========== Large Desktop (1200px+) ========== */
   @media(min-width:1200px){
-    .features-grid{grid-template-columns:repeat(3,1fr)}
-    .units-grid{grid-template-columns:repeat(4,1fr)}
+    .features-grid{grid-template-columns:repeat(3,1fr);}
+    .units-grid{grid-template-columns:repeat(4,1fr);}
   }
 
-  /* ========== Small Mobile (max 380px) ========== */
   @media(max-width:380px){
-    .nav{padding:.3rem 0}
-    .nav-container{padding:0 .5rem;gap:.3rem}
-    .nav-links a{font-size:.68rem;padding:.25rem .55rem}
-    .logo-img{width:28px;height:28px}
-    .logo-text{font-size:.85rem}
+    .nav{padding:.3rem 0;}
+    .nav-container{padding:0 .5rem;gap:.3rem;}
+    .nav-links a{font-size:.68rem;padding:.25rem .55rem;}
+    .nav-links{padding-left:80px;}
+    .logo-img{width:28px;height:28px;}
+    .logo-text{font-size:.85rem;}
 
-    .hero h1{font-size:1.5rem}
-    .hero-tagline{font-size:.82rem;padding:.7rem 1rem}
-    .hero-badge{font-size:.72rem;padding:.35rem .9rem}
-    .stat-value{font-size:1.2rem}
-    .stat-label{font-size:.68rem}
-    .section-title{font-size:1.3rem}
-    .section-tag{font-size:.7rem}
-    .footer-logo-frame img{width:150px;height:auto}
-    .footer-logo{font-size:1.3rem}
-    .footer-slogan{font-size:.88rem}
-    .base-prices{grid-template-columns:1fr}
-    .payment-card-circle{width:70px;height:70px;font-size:1.4rem}
+    .hero h1{font-size:1.5rem;}
+    .hero-tagline{font-size:.82rem;padding:.7rem 1rem;}
+    .hero-badge{font-size:.72rem;padding:.35rem .9rem;}
+    .stat-value{font-size:1.2rem;}
+    .stat-label{font-size:.68rem;}
+    .section-title{font-size:1.3rem;}
+    .section-tag{font-size:.7rem;}
+    .footer-logo-frame img{width:150px;height:auto;}
+    .footer-logo{font-size:1.3rem;}
+    .footer-slogan{font-size:.88rem;}
+    .base-prices{grid-template-columns:1fr;}
+    .payment-card-circle{width:70px;height:70px;font-size:1.4rem;}
   }
 
-  /* ========== Touch Device Optimizations ========== */
   @media(hover:none){
     .feature-card:hover,
     .utility-card:hover,
@@ -1239,14 +1203,12 @@
     }
   }
 
-  /* ========== Landscape Mobile ========== */
   @media(max-width:900px) and (orientation:landscape){
-    .hero{min-height:auto;padding:2rem 1rem}
-    .hero-stats{grid-template-columns:repeat(4,1fr);margin-top:1.5rem}
-    .hero-tagline{font-size:.9rem;padding:.6rem 1rem;margin-bottom:1rem}
+    .hero{min-height:auto;padding:2rem 1rem;}
+    .hero-stats{grid-template-columns:repeat(4,1fr);margin-top:1.5rem;}
+    .hero-tagline{font-size:.9rem;padding:.6rem 1rem;margin-bottom:1rem;}
   }
 
-  /* ========== Prefers Reduced Motion ========== */
   @media(prefers-reduced-motion:reduce){
     *,*::before,*::after{
       animation-duration:.01ms !important;
@@ -1254,8 +1216,8 @@
     }
   }
 
-  ::-webkit-scrollbar{width:8px}
-  ::-webkit-scrollbar-track{background:var(--dark)}
+  ::-webkit-scrollbar{width:8px;}
+  ::-webkit-scrollbar-track{background:var(--dark);}
   ::-webkit-scrollbar-thumb{
     background:var(--gradient-gold);
     border-radius:10px;
@@ -1269,8 +1231,8 @@
 <!-- Navigation -->
 <nav class="nav">
   <div class="nav-container">
-    <div class="nav-links-wrapper">
-      <div class="nav-links">
+    <div class="nav-links-wrapper" id="navWrapper">
+      <div class="nav-links" id="navLinks">
         <a href="#intro">معرفی</a>
         <a href="#features">ویژگی‌ها</a>
         <a href="#utilities">تاسیسات</a>
@@ -1352,96 +1314,172 @@
     <div class="divider"><i class="fas fa-diamond"></i></div>
   </div>
   <div class="features-grid">
+
     <div class="feature-card">
-      <div class="feature-icon"><i class="fas fa-couch"></i></div>
-      <span class="feature-badge">لوکس</span>
-      <h3 class="feature-title">لابی فاخر و مجلل در طبقه همکف</h3>
+      <div class="feature-header">
+        <div class="feature-icon"><i class="fas fa-couch"></i></div>
+        <div>
+          <div class="feature-title">لابی فاخر و مجلل در طبقه همکف</div>
+          <div class="feature-badge">لوکس</div>
+        </div>
+      </div>
       <p class="feature-desc">با طراحی منحصر به فردی از سنگ‌های باشکوه امپرادور ترکیه، شومینه برقی، آب‌نمای چشم‌نواز، مبلمان شیک و سیستم‌های صوتی و تصویری.</p>
     </div>
+
     <div class="feature-card">
-      <div class="feature-icon"><i class="fas fa-swimmer"></i></div>
-      <span class="feature-badge">رفاهی</span>
-      <h3 class="feature-title">استخر، سونا و جکوزی فوق‌العاده</h3>
+      <div class="feature-header">
+        <div class="feature-icon"><i class="fas fa-swimmer"></i></div>
+        <div>
+          <div class="feature-title">استخر، سونا و جکوزی فوق‌العاده</div>
+          <div class="feature-badge">رفاهی</div>
+        </div>
+      </div>
       <p class="feature-desc">با موتورخانه مجزا و سیستم نوین تصفیه آب، به همراه رختکن و سرویس بهداشتی لوکس در زیرزمین.</p>
     </div>
+
     <div class="feature-card">
-      <div class="feature-icon"><i class="fas fa-dumbbell"></i></div>
-      <span class="feature-badge">ورزشی</span>
-      <h3 class="feature-title">سالن ورزشی (Gym) مجهز</h3>
+      <div class="feature-header">
+        <div class="feature-icon"><i class="fas fa-dumbbell"></i></div>
+        <div>
+          <div class="feature-title">سالن ورزشی (Gym) مجهز</div>
+          <div class="feature-badge">ورزشی</div>
+        </div>
+      </div>
       <p class="feature-desc">دارای تجهیزات پیشرفته بدنسازی و ورزش.</p>
     </div>
+
     <div class="feature-card">
-      <div class="feature-icon"><i class="fas fa-glass-cheers"></i></div>
-      <span class="feature-badge">اجتماعی</span>
-      <h3 class="feature-title">سالن چندمنظوره شیک</h3>
+      <div class="feature-header">
+        <div class="feature-icon"><i class="fas fa-glass-cheers"></i></div>
+        <div>
+          <div class="feature-title">سالن چندمنظوره شیک</div>
+          <div class="feature-badge">اجتماعی</div>
+        </div>
+      </div>
       <p class="feature-desc">برای برپایی جشن‌ها و میهمانی‌ها، دارای آشپزخانه مستقل.</p>
     </div>
+
     <div class="feature-card">
-      <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
-      <span class="feature-badge">خدماتی</span>
-      <h3 class="feature-title">واحد سرایداری</h3>
+      <div class="feature-header">
+        <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
+        <div>
+          <div class="feature-title">واحد سرایداری</div>
+          <div class="feature-badge">خدماتی</div>
+        </div>
+      </div>
       <p class="feature-desc">به متراژ حدود ۷۰ متر برای اقامت سرایدار و خدمات ساختمان.</p>
     </div>
+
     <div class="feature-card">
-      <div class="feature-icon"><i class="fas fa-leaf"></i></div>
-      <span class="feature-badge">منحصر به فرد</span>
-      <h3 class="feature-title">روف گاردن (بام سبز) رویایی</h3>
+      <div class="feature-header">
+        <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+        <div>
+          <div class="feature-title">روف گاردن (بام سبز) رویایی</div>
+          <div class="feature-badge">منحصر به فرد</div>
+        </div>
+      </div>
       <p class="feature-desc">با تلفیقی از چوب، آجر و سنگ، آب‌نما، آلاچیق‌های ۱۲ نفره، باربیکیو و منظر ۳۶۰ درجه از شهر و کوهستان.</p>
     </div>
+
     <div class="feature-card">
-      <div class="feature-icon"><i class="fas fa-arrow-up"></i></div>
-      <span class="feature-badge">دسترسی</span>
-      <h3 class="feature-title">دسترسی آسان به بام</h3>
+      <div class="feature-header">
+        <div class="feature-icon"><i class="fas fa-arrow-up"></i></div>
+        <div>
+          <div class="feature-title">دسترسی آسان به بام</div>
+          <div class="feature-badge">دسترسی</div>
+        </div>
+      </div>
       <p class="feature-desc">از طریق احداث یک ایستگاه اضافه برای توقف آسانسورها در روف گاردن.</p>
     </div>
+
     <div class="feature-card">
-      <div class="feature-icon"><i class="fas fa-elevator"></i></div>
-      <span class="feature-badge">آلمانی</span>
-      <h3 class="feature-title">آسانسورهای بزرگ ۱۲ نفره</h3>
+      <div class="feature-header">
+        <div class="feature-icon"><i class="fas fa-elevator"></i></div>
+        <div>
+          <div class="feature-title">آسانسورهای بزرگ ۱۲ نفره</div>
+          <div class="feature-badge">آلمانی</div>
+        </div>
+      </div>
       <p class="feature-desc">با موتور گیرلس مارک زیلابگ آلمان برای افزایش بازده و کاهش صدا و مصرف انرژی.</p>
     </div>
+
     <div class="feature-card">
-      <div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div>
-      <span class="feature-badge">هوشمند</span>
-      <h3 class="feature-title">سیستم تفکیک و محاسبه انرژی (BTU Meter)</h3>
+      <div class="feature-header">
+        <div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div>
+        <div>
+          <div class="feature-title">سیستم تفکیک و محاسبه انرژی (BTU Meter)</div>
+          <div class="feature-badge">هوشمند</div>
+        </div>
+      </div>
       <p class="feature-desc">برای هر واحد با کنتورهای التراسونیک و امکان مشاهده آنلاین مصرف.</p>
     </div>
+
     <div class="feature-card">
-      <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
-      <span class="feature-badge">هوشمند</span>
-      <h3 class="feature-title">سیستم خانه هوشمند (BMS)</h3>
+      <div class="feature-header">
+        <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+        <div>
+          <div class="feature-title">سیستم خانه هوشمند (BMS)</div>
+          <div class="feature-badge">هوشمند</div>
+        </div>
+      </div>
       <p class="feature-desc">برای کنترل روشنایی، فن‌کوئل‌ها و سایر منصوبات برقی از طریق موبایل.</p>
     </div>
+
     <div class="feature-card">
-      <div class="feature-icon"><i class="fas fa-window-maximize"></i></div>
-      <span class="feature-badge">عایق</span>
-      <h3 class="feature-title">پنجره‌های آلومینیومی ترمال بریک</h3>
+      <div class="feature-header">
+        <div class="feature-icon"><i class="fas fa-window-maximize"></i></div>
+        <div>
+          <div class="feature-title">پنجره‌های آلومینیومی ترمال بریک</div>
+          <div class="feature-badge">عایق</div>
+        </div>
+      </div>
       <p class="feature-desc">دو رنگ با لایه جداکننده پلی‌آمید برای شکست حرارت.</p>
     </div>
+
     <div class="feature-card">
-      <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-      <span class="feature-badge">انرژی</span>
-      <h3 class="feature-title">عایق‌کاری دیوارهای جانبی</h3>
+      <div class="feature-header">
+        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+        <div>
+          <div class="feature-title">عایق‌کاری دیوارهای جانبی</div>
+          <div class="feature-badge">انرژی</div>
+        </div>
+      </div>
       <p class="feature-desc">با فوم ۲ سانتی‌متری و رابیتس، افزون بر مبحث ۱۹ انرژی.</p>
     </div>
+
     <div class="feature-card">
-      <div class="feature-icon"><i class="fas fa-wifi"></i></div>
-      <span class="feature-badge">اینترنت</span>
-      <h3 class="feature-title">اینترنت پرسرعت</h3>
+      <div class="feature-header">
+        <div class="feature-icon"><i class="fas fa-wifi"></i></div>
+        <div>
+          <div class="feature-title">اینترنت پرسرعت</div>
+          <div class="feature-badge">اینترنت</div>
+        </div>
+      </div>
       <p class="feature-desc">فیبر نوری با تجهیزات اختصاصی شاتل.</p>
     </div>
+
     <div class="feature-card">
-      <div class="feature-icon"><i class="fas fa-volume-up"></i></div>
-      <span class="feature-badge">صوتی</span>
-      <h3 class="feature-title">سیستم صوتی مستقل</h3>
+      <div class="feature-header">
+        <div class="feature-icon"><i class="fas fa-volume-up"></i></div>
+        <div>
+          <div class="feature-title">سیستم صوتی مستقل</div>
+          <div class="feature-badge">صوتی</div>
+        </div>
+      </div>
       <p class="feature-desc">هر واحد مجهز به آمپلی‌فایر و باند صوتی مجزا.</p>
     </div>
+
     <div class="feature-card">
-      <div class="feature-icon"><i class="fas fa-video"></i></div>
-      <span class="feature-badge">امنیت</span>
-      <h3 class="feature-title">سامانه نظارت تصویری (CCTV)</h3>
+      <div class="feature-header">
+        <div class="feature-icon"><i class="fas fa-video"></i></div>
+        <div>
+          <div class="feature-title">سامانه نظارت تصویری (CCTV)</div>
+          <div class="feature-badge">امنیت</div>
+        </div>
+      </div>
       <p class="feature-desc">دوربین‌های مداربسته در لابی‌ها، مشاعات و محوطه با امکان نظارت متمرکز.</p>
     </div>
+
   </div>
 </section>
 
@@ -2021,6 +2059,57 @@
     بازگشت به بالا
   </a>
 </footer>
+
+<script>
+  (function() {
+    var navLinks = document.getElementById('navLinks');
+    var navWrapper = document.getElementById('navWrapper');
+    if (!navLinks || !navWrapper) return;
+
+    /* ========== محو کردن گرادیان در انتهای لیست ========== */
+    function updateScrollState() {
+      var sl = Math.abs(navLinks.scrollLeft);
+      var max = navLinks.scrollWidth - navLinks.clientWidth;
+      if (max > 5 && sl >= max - 5) {
+        navWrapper.classList.add('at-end');
+      } else {
+        navWrapper.classList.remove('at-end');
+      }
+    }
+    updateScrollState();
+    navLinks.addEventListener('scroll', updateScrollState, { passive: true });
+    window.addEventListener('resize', updateScrollState);
+
+    /* ========== اسکرول نوار وقتی روی دکمه کلیک می‌شود ========== */
+    var allLinks = navLinks.querySelectorAll('a');
+
+    allLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        // کمی تاخیر تا اسکرول پیش‌فرض صفحه شروع شود
+        setTimeout(function() {
+          // روش ۱: استفاده از scrollIntoView (استاندارد و مطمئن)
+          try {
+            link.scrollIntoView({
+              behavior: 'smooth',
+              block: 'nearest',
+              inline: 'start'
+            });
+          } catch (e) {
+            // روش ۲ (پشتیبان): محاسبه دستی
+            var linkRect = link.getBoundingClientRect();
+            var wrapperRect = navWrapper.getBoundingClientRect();
+            var shiftRight = wrapperRect.right - linkRect.right;
+            var newScroll = navLinks.scrollLeft - shiftRight;
+            var maxScroll = navLinks.scrollWidth - navLinks.clientWidth;
+            if (newScroll > 0) newScroll = 0;
+            if (newScroll < -maxScroll) newScroll = -maxScroll;
+            navLinks.scrollTo({ left: newScroll, behavior: 'smooth' });
+          }
+        }, 30);
+      });
+    });
+  })();
+</script>
 
 </body>
 </html>
