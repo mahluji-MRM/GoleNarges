@@ -49,7 +49,7 @@
     z-index:0;
   }
 
-  /* ========== Navigation (Compact for Mobile ≤80px) ========== */
+  /* ========== Navigation (Compact for Mobile ≤80px with Scroll Hint) ========== */
   .nav{
     position:sticky;
     top:0;
@@ -72,21 +72,84 @@
     gap:.4rem;
     max-height:80px;
   }
-  .nav-links{
+
+  /* Wrapper نوار ناوبری با نشانگر اسکرول */
+  .nav-links-wrapper{
     order:1;
+    flex:1;
+    position:relative;
+    overflow:hidden;
+    max-height:80px;
+    min-width:0;
+  }
+
+  /* گرادیان محو در سمت چپ (نشانه وجود محتوای بیشتر در RTL) */
+  .nav-links-wrapper::after{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:45px;
+    background:linear-gradient(90deg, rgba(15,20,25,1) 0%, rgba(15,20,25,.85) 40%, transparent 100%);
+    pointer-events:none;
+    z-index:3;
+  }
+
+  /* فلش کوچک متحرک در سمت چپ */
+  .nav-links-wrapper::before{
+    content:'‹';
+    position:absolute;
+    top:50%;
+    left:5px;
+    transform:translateY(-50%);
+    color:var(--gold);
+    font-size:1.5rem;
+    font-weight:900;
+    pointer-events:none;
+    z-index:4;
+    animation:scrollHint 1.6s ease-in-out infinite;
+    text-shadow:0 0 12px rgba(201,169,97,.9);
+    line-height:1;
+  }
+
+  @keyframes scrollHint{
+    0%,100%{transform:translateY(-50%) translateX(0);opacity:.6;}
+    50%{transform:translateY(-50%) translateX(-6px);opacity:1;}
+  }
+
+  .nav-links{
     display:flex;
     gap:.25rem;
     flex-wrap:nowrap;
     justify-content:flex-start;
-    flex:1;
     overflow-x:auto;
     overflow-y:hidden;
     -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-    padding:.15rem 0;
+    scrollbar-width:thin;
+    scrollbar-color:var(--gold) rgba(201,169,97,.1);
+    padding:.15rem 0 .4rem;
     max-height:80px;
+    height:100%;
+    scroll-behavior:smooth;
   }
-  .nav-links::-webkit-scrollbar{display:none}
+
+  /* اسکرول‌بار نازک طلایی */
+  .nav-links::-webkit-scrollbar{
+    height:3px;
+  }
+  .nav-links::-webkit-scrollbar-track{
+    background:rgba(201,169,97,.1);
+    border-radius:3px;
+  }
+  .nav-links::-webkit-scrollbar-thumb{
+    background:var(--gold);
+    border-radius:3px;
+  }
+  .nav-links::-webkit-scrollbar-thumb:hover{
+    background:var(--gold-light);
+  }
+
   .logo{
     order:2;
     display:flex;
@@ -1049,10 +1112,21 @@
       flex-wrap:wrap;
       max-height:none;
     }
+    /* حذف نشانگر اسکرول در تبلت و دسکتاپ */
+    .nav-links-wrapper{
+      flex:1;
+      overflow:visible;
+      max-height:none;
+    }
+    .nav-links-wrapper::before,
+    .nav-links-wrapper::after{
+      display:none;
+    }
     .nav-links{
       flex-wrap:wrap;
       overflow-x:visible;
       gap:.35rem;
+      padding:.15rem 0;
     }
     .logo-img{width:44px;height:44px}
     .logo-text{font-size:1.2rem}
@@ -1195,13 +1269,15 @@
 <!-- Navigation -->
 <nav class="nav">
   <div class="nav-container">
-    <div class="nav-links">
-      <a href="#intro">معرفی</a>
-      <a href="#features">ویژگی‌ها</a>
-      <a href="#utilities">تاسیسات</a>
-      <a href="#units">واحدها</a>
-      <a href="#pricing">قیمت</a>
-      <a href="#access">دسترسی</a>
+    <div class="nav-links-wrapper">
+      <div class="nav-links">
+        <a href="#intro">معرفی</a>
+        <a href="#features">ویژگی‌ها</a>
+        <a href="#utilities">تاسیسات</a>
+        <a href="#units">واحدها</a>
+        <a href="#pricing">قیمت</a>
+        <a href="#access">دسترسی</a>
+      </div>
     </div>
     <a href="#top" class="logo">
       <img src="https://uploadkon.ir/uploads/97b625_26photo-30091278780-x.jpg" alt="لوگوی گل نرگس" class="logo-img">
