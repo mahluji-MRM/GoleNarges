@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f1419">
+<title>مجتمع گل نرگس | پروفایل جامع</title>
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/sahel-font@v3.4.0/dist/font-face.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  :root{
+    --gold:#c9a961;
+    --gold-light:#e8d5a0;
+    --gold-dark:#8a6d2f;
+    --dark:#0f1419;
+    --dark-2:#1a1f26;
+    --dark-3:#252b33;
+    --cream:#f5f1e8;
+    --text:#e8e6e1;
+    --text-muted:#9ca3af;
+    --accent:#d4af37;
+    --success:#10b981;
+    --danger:#ef4444;
+    --gradient-gold:linear-gradient(135deg,#c9a961 0%,#e8d5a0 50%,#c9a961 100%);
+    --gradient-dark:linear-gradient(135deg,#0f1419 0%,#1a1f26 100%);
+    --shadow-gold:0 10px 40px rgba(201,169,97,.25);
+    --shadow-lg:0 25px 50px -12px rgba(0,0,0,.5);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Vazirmatn','Sahel',Tahoma,sans-serif;
+    background:var(--dark);
+    color:var(--text);
+    line-height:1.8;
+    overflow-x:hidden;
+    min-height:100vh;
+    -webkit-overflow-scrolling:touch;
+  }
+  body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+      radial-gradient(circle at 20% 30%,rgba(201,169,97,.08) 0%,transparent 50%),
+      radial-gradient(circle at 80% 70%,rgba(201,169,97,.05) 0%,transparent 50%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* ========== Navigation (Compact for Mobile ≤80px) ========== */
+  .nav{
+    position:sticky;
+    top:0;
+    background:rgba(15,20,25,.95);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(201,169,97,.2);
+    z-index:100;
+    padding:.35rem 0;
+    max-height:80px;
+  }
+  .nav-container{
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 .6rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:nowrap;
+    gap:.4rem;
+    max-height:80px;
+  }
+  .nav-links{
+    order:1;
+    display:flex;
+    gap:.25rem;
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+    flex:1;
+    overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    padding:.15rem 0;
+    max-height:80px;
+  }
+  .nav-links::-webkit-scrollbar{display:none}
+  .logo{
+    order:2;
+    display:flex;
+    align-items:center;
+    gap:.35rem;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+  .logo-img{
+    width:32px;
+    height:32px;
+    object-fit:cover;
+    border-radius:50%;
+    border:2px solid var(--gold);
+    box-shadow:0 0 12px rgba(201,169,97,.5);
+    transition:all .3s;
+  }
+  .logo:hover .logo-img{
+    transform:scale(1.08);
+    box-shadow:0 0 25px rgba(201,169,97,.8);
+  }
+  .logo-text{
+    font-size:.95rem;
+    font-weight:900;
+    background:var(--gradient-gold);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  .nav-links a{
+    color:var(--text);
+    text-decoration:none;
+    padding:.3rem .65rem;
+    border-radius:30px;
+    font-size:.75rem;
+    font-weight:500;
+    transition:all .3s;
+    border:1px solid transparent;
+    white-space:nowrap;
+    flex-shrink:0;
+    line-height:1.3;
+  }
+  .nav-links a:hover,
+  .nav-links a:active{
+    background:rgba(201,169,97,.1);
+    border-color:var(--gold);
+    color:var(--gold);
+  }
+
+  /* ========== Hero ========== */
+  .hero{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    padding:3rem 1rem;
+    min-height:calc(100vh - 80px);
+    min-height:calc(100dvh - 80px);
+  }
+  .hero-bg{
+    position:absolute;
+    inset:0;
+    background-image:url('https://uploadkon.ir/uploads/97b625_26photo-30091278780-x.jpg');
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+    filter:brightness(.4) saturate(1.15);
+    z-index:-2;
+    will-change:transform;
+    transform:translateZ(0);
+  }
+  .hero-bg::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,rgba(15,20,25,.55) 0%,rgba(15,20,25,.75) 50%,rgba(15,20,25,.95) 100%);
+  }
+  @media (max-width: 768px) {
+    .hero-bg {
+      background-size: cover;
+      background-position: center top;
+      filter:brightness(.38) saturate(1.1);
+    }
+  }
+  @media (max-width: 480px) {
+    .hero-bg {
+      background-size: auto 100%;
+      background-position: center top;
+    }
+  }
+  @media (min-width: 1400px) {
+    .hero-bg {
+      background-size: 100% auto;
+    }
+  }
+
+  .hero-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    max-width:1000px;
+    width:100%;
+  }
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:.4rem;
+    padding:.4rem 1.1rem;
+    background:rgba(201,169,97,.15);
+    border:1px solid var(--gold);
+    border-radius:50px;
+    color:var(--gold-light);
+    font-size:.8rem;
+    margin-bottom:1.2rem;
+    backdrop-filter:blur(10px);
+    animation:fadeInDown 1s;
+  }
+  .hero h1{
+    font-size:clamp(1.7rem,7vw,5rem);
+    font-weight:900;
+    background:var(--gradient-gold);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    margin-bottom:1rem;
+    line-height:1.25;
+    animation:fadeInUp 1s;
+    text-shadow:0 4px 30px rgba(201,169,97,.3);
+    word-break:break-word;
+  }
+  .hero-subtitle{
+    font-size:clamp(.85rem,2.5vw,1.3rem);
+    color:var(--text-muted);
+    margin-bottom:1.2rem;
+    animation:fadeInUp 1s .2s backwards;
+    padding:0 .5rem;
+  }
+  .hero-tagline{
+    display:inline-block;
+    font-size:clamp(.9rem,3vw,1.5rem);
+    font-weight:900;
+    color:var(--gold);
+    padding:.8rem 1.2rem;
+    margin-bottom:1.8rem;
+    border-right:2px solid var(--gold);
+    border-left:2px solid var(--gold);
+    background:linear-gradient(90deg,rgba(201,169,97,.08),rgba(201,169,97,.15),rgba(201,169,97,.08));
+    border-radius:10px;
+    letter-spacing:.3px;
+    text-shadow:0 0 20px rgba(201,169,97,.4);
+    animation:fadeInUp 1s .3s backwards;
+    backdrop-filter:blur(10px);
+    line-height:1.6;
+    max-width:100%;
+  }
+  .hero-tagline i{
+    color:var(--gold-light);
+    margin-left:.4rem;
+    font-size:.95rem;
+    vertical-align:middle;
+  }
+  .hero-stats{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:.75rem;
+    margin-top:1.8rem;
+    animation:fadeInUp 1s .4s backwards;
+  }
+  .stat-card{
+    background:rgba(255,255,255,.03);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(201,169,97,.3);
+    padding:1rem .6rem;
+    border-radius:15px;
+    transition:all .4s;
+  }
+  .stat-card:hover,
+  .stat-card:active{
+    transform:translateY(-5px);
+    border-color:var(--gold);
+    box-shadow:var(--shadow-gold);
+  }
+  .stat-icon{
+    font-size:1.4rem;
+    color:var(--gold);
+    margin-bottom:.4rem;
+  }
+  .stat-value{
+    font-size:1.4rem;
+    font-weight:900;
+    color:var(--gold-light);
+    margin-bottom:.15rem;
+  }
+  .stat-label{
+    font-size:.72rem;
+    color:var(--text-muted);
+  }
+
+  /* ========== Section ========== */
+  .section{
+    position:relative;
+    padding:3.5rem 1rem;
+    max-width:1400px;
+    margin:0 auto;
+  }
+  .section-header{
+    text-align:center;
+    margin-bottom:2.5rem;
+  }
+  .section-tag{
+    display:inline-block;
+    color:var(--gold);
+    font-size:.75rem;
+    letter-spacing:2px;
+    margin-bottom:.8rem;
+    text-transform:uppercase;
+  }
+  .section-title{
+    font-size:clamp(1.4rem,5vw,3rem);
+    font-weight:900;
+    margin-bottom:.8rem;
+    background:var(--gradient-gold);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    line-height:1.3;
+    padding:0 .5rem;
+  }
+  .section-subtitle{
+    color:var(--text-muted);
+    font-size:.9rem;
+    max-width:700px;
+    margin:0 auto;
+    padding:0 .5rem;
+  }
+  .divider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:1rem;
+    margin:1.5rem 0;
+    color:var(--gold);
+  }
+  .divider::before,.divider::after{
+    content:'';
+    flex:1;
+    max-width:100px;
+    height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+
+  /* ========== Intro ========== */
+  .intro-content{
+    background:linear-gradient(135deg,rgba(26,31,38,.8),rgba(15,20,25,.8));
+    border:1px solid rgba(201,169,97,.2);
+    border-radius:20px;
+    padding:1.5rem 1.2rem;
+    backdrop-filter:blur(20px);
+    position:relative;
+    overflow:hidden;
+  }
+  .intro-content::before{
+    content:'';
+    position:absolute;
+    top:-50%;
+    right:-50%;
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle,rgba(201,169,97,.05) 0%,transparent 70%);
+    pointer-events:none;
+  }
+  .intro-content p{
+    font-size:.95rem;
+    line-height:1.95;
+    color:var(--text);
+    position:relative;
+    z-index:1;
+    text-align:justify;
+  }
+  .intro-content strong{
+    color:var(--gold-light);
+    font-weight:700;
+  }
+
+  /* ========== Features Grid ========== */
+  .features-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1rem;
+  }
+  .feature-card{
+    background:linear-gradient(135deg,rgba(26,31,38,.9),rgba(15,20,25,.9));
+    border:1px solid rgba(201,169,97,.15);
+    border-radius:16px;
+    padding:1.3rem;
+    transition:all .4s;
+    position:relative;
+    overflow:hidden;
+  }
+  .feature-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:3px;
+    background:var(--gradient-gold);
+    transform:scaleX(0);
+    transform-origin:right;
+    transition:transform .5s;
+  }
+  .feature-card:hover,
+  .feature-card:active{
+    transform:translateY(-5px);
+    border-color:var(--gold);
+    box-shadow:var(--shadow-gold);
+  }
+  .feature-card:hover::before,
+  .feature-card:active::before{
+    transform:scaleX(1);
+    transform-origin:left;
+  }
+  .feature-icon{
+    width:50px;
+    height:50px;
+    background:rgba(201,169,97,.1);
+    border:1px solid rgba(201,169,97,.3);
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.2rem;
+    color:var(--gold);
+    margin-bottom:1rem;
+    transition:all .3s;
+  }
+  .feature-card:hover .feature-icon{
+    background:var(--gradient-gold);
+    color:var(--dark);
+    transform:rotate(-5deg) scale(1.1);
+  }
+  .feature-title{
+    font-size:1.05rem;
+    font-weight:700;
+    color:var(--gold-light);
+    margin-bottom:.4rem;
+  }
+  .feature-badge{
+    display:inline-block;
+    padding:.15rem .65rem;
+    background:rgba(201,169,97,.15);
+    color:var(--gold);
+    border-radius:20px;
+    font-size:.7rem;
+    margin-bottom:.7rem;
+  }
+  .feature-desc{
+    color:var(--text-muted);
+    font-size:.88rem;
+    line-height:1.75;
+  }
+
+  /* ========== Utilities ========== */
+  .utilities-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1rem;
+  }
+  .utility-card{
+    background:linear-gradient(135deg,rgba(26,31,38,.95),rgba(15,20,25,.95));
+    border:1px solid rgba(201,169,97,.2);
+    border-radius:16px;
+    padding:1.3rem;
+    position:relative;
+    transition:all .4s;
+  }
+  .utility-card:hover,
+  .utility-card:active{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow-gold);
+    border-color:var(--gold);
+  }
+  .utility-header{
+    display:flex;
+    align-items:center;
+    gap:.8rem;
+    margin-bottom:1rem;
+    padding-bottom:.8rem;
+    border-bottom:1px solid rgba(201,169,97,.2);
+  }
+  .utility-icon{
+    width:44px;
+    height:44px;
+    background:var(--gradient-gold);
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.1rem;
+    color:var(--dark);
+    flex-shrink:0;
+  }
+  .utility-title{
+    font-size:1rem;
+    font-weight:700;
+    color:var(--gold-light);
+  }
+  .utility-tag{
+    font-size:.75rem;
+    color:var(--gold);
+    margin-top:.15rem;
+  }
+  .utility-desc{
+    color:var(--text);
+    font-size:.88rem;
+    line-height:1.85;
+    margin-bottom:.9rem;
+  }
+  .utility-feature{
+    display:flex;
+    align-items:flex-start;
+    gap:.5rem;
+    padding:.7rem .8rem;
+    background:rgba(201,169,97,.08);
+    border-radius:10px;
+    font-size:.82rem;
+    color:var(--gold-light);
+    line-height:1.6;
+  }
+  .utility-feature i{color:var(--gold);margin-top:.2rem;flex-shrink:0}
+
+  /* ========== Units ========== */
+  .units-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1.2rem;
+  }
+  .unit-card{
+    background:linear-gradient(135deg,rgba(26,31,38,.95),rgba(15,20,25,.95));
+    border:1px solid rgba(201,169,97,.2);
+    border-radius:20px;
+    overflow:hidden;
+    transition:all .4s;
+    position:relative;
+  }
+  .unit-card:hover,
+  .unit-card:active{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow-gold);
+  }
+  .unit-header{
+    padding:1.2rem 1.5rem;
+    background:var(--gradient-gold);
+    color:var(--dark);
+    text-align:center;
+    position:relative;
+  }
+  .unit-type{
+    font-size:1.25rem;
+    font-weight:900;
+    margin-bottom:.2rem;
+  }
+  .unit-series{
+    font-size:.82rem;
+    opacity:.85;
+  }
+  .unit-body{padding:1.3rem}
+  .unit-info{
+    display:flex;
+    align-items:center;
+    gap:.8rem;
+    padding:.8rem 0;
+    border-bottom:1px solid rgba(201,169,97,.1);
+  }
+  .unit-info:last-child{border-bottom:none}
+  .unit-info i{
+    width:36px;
+    height:36px;
+    background:rgba(201,169,97,.1);
+    border-radius:9px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--gold);
+    flex-shrink:0;
+    font-size:.9rem;
+  }
+  .unit-info-label{
+    font-size:.72rem;
+    color:var(--text-muted);
+  }
+  .unit-info-value{
+    font-size:.9rem;
+    color:var(--text);
+    font-weight:600;
+    line-height:1.5;
+  }
+  .unit-feature{
+    margin-top:1rem;
+    padding:.85rem;
+    background:rgba(201,169,97,.08);
+    border-radius:10px;
+    text-align:center;
+    color:var(--gold-light);
+    font-size:.85rem;
+    line-height:1.6;
+  }
+  .unit-feature i{color:var(--gold);margin-left:.4rem}
+
+  /* ========== Pricing ========== */
+  .pricing-intro{
+    background:linear-gradient(135deg,rgba(201,169,97,.1),rgba(201,169,97,.05));
+    border:1px solid rgba(201,169,97,.3);
+    border-radius:18px;
+    padding:1.3rem 1.2rem;
+    margin-bottom:1.8rem;
+    text-align:center;
+  }
+  .pricing-intro p{
+    font-size:.9rem;
+    line-height:1.9;
+    color:var(--text);
+    text-align:justify;
+  }
+  .pricing-intro strong{color:var(--gold-light)}
+  .base-prices{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:.7rem;
+    margin:1.5rem 0 2rem;
+  }
+  .base-price{
+    background:linear-gradient(135deg,rgba(26,31,38,.95),rgba(15,20,25,.95));
+    border:1px solid rgba(201,169,97,.2);
+    border-radius:12px;
+    padding:1rem .7rem;
+    text-align:center;
+    transition:all .3s;
+  }
+  .base-price:hover,
+  .base-price:active{
+    border-color:var(--gold);
+    transform:translateY(-3px);
+  }
+  .base-price-label{
+    color:var(--gold);
+    font-size:.78rem;
+    margin-bottom:.4rem;
+  }
+  .base-price-value{
+    font-size:.9rem;
+    font-weight:900;
+    color:var(--gold-light);
+    margin-bottom:.25rem;
+    line-height:1.4;
+  }
+  .base-price-area{
+    font-size:.72rem;
+    color:var(--text-muted);
+  }
+
+  /* ========== Floor Cards ========== */
+  .floor-card{
+    background:linear-gradient(135deg,rgba(26,31,38,.95),rgba(15,20,25,.95));
+    border:1px solid rgba(201,169,97,.2);
+    border-radius:16px;
+    margin-bottom:1.2rem;
+    overflow:hidden;
+    transition:all .3s;
+  }
+  .floor-card:hover{
+    border-color:var(--gold);
+    box-shadow:0 10px 30px rgba(201,169,97,.15);
+  }
+  .floor-header{
+    background:var(--gradient-gold);
+    color:var(--dark);
+    padding:.8rem 1rem;
+    font-size:1rem;
+    font-weight:900;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+  }
+  .floor-body{padding:1rem .8rem}
+  .unit-row{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:.7rem;
+    padding:.5rem 0;
+  }
+  .unit-row:last-child{border-bottom:none}
+  .unit-detail{
+    background:rgba(201,169,97,.05);
+    border:1px solid rgba(201,169,97,.15);
+    border-radius:10px;
+    padding:.85rem;
+    transition:all .3s;
+  }
+  .unit-detail:hover,
+  .unit-detail:active{
+    background:rgba(201,169,97,.1);
+    border-color:var(--gold);
+  }
+  .unit-detail.sold{
+    background:rgba(239,68,68,.05);
+    border-color:rgba(239,68,68,.3);
+  }
+  .unit-number{
+    font-weight:900;
+    color:var(--gold-light);
+    margin-bottom:.4rem;
+    font-size:1rem;
+  }
+  .unit-meta{
+    font-size:.78rem;
+    color:var(--text-muted);
+    margin-bottom:.25rem;
+    line-height:1.5;
+  }
+  .unit-price{
+    font-size:.85rem;
+    font-weight:700;
+    color:var(--gold);
+    margin-top:.5rem;
+    padding-top:.5rem;
+    border-top:1px solid rgba(201,169,97,.2);
+    line-height:1.5;
+  }
+  .unit-special{
+    margin-top:.5rem;
+    padding:.5rem .7rem;
+    background:rgba(201,169,97,.1);
+    border-radius:7px;
+    font-size:.72rem;
+    color:var(--gold-light);
+    line-height:1.6;
+  }
+  .sold-badge{
+    display:inline-block;
+    padding:.25rem .7rem;
+    background:var(--danger);
+    color:white;
+    border-radius:20px;
+    font-size:.72rem;
+    font-weight:700;
+    margin-top:.4rem;
+  }
+  .all-sold{
+    text-align:center;
+    padding:1.3rem;
+    color:var(--danger);
+    font-weight:700;
+    font-size:.95rem;
+    line-height:1.6;
+  }
+  .all-sold i{margin:0 .3rem}
+
+  .price-note{
+    background:linear-gradient(135deg,rgba(201,169,97,.15),rgba(201,169,97,.05));
+    border:1px solid var(--gold);
+    border-radius:12px;
+    padding:1rem 1.1rem;
+    margin:1.5rem 0;
+    display:flex;
+    align-items:flex-start;
+    gap:.7rem;
+    font-size:.85rem;
+    line-height:1.7;
+  }
+  .price-note i{
+    font-size:1.2rem;
+    color:var(--gold);
+    flex-shrink:0;
+    margin-top:.15rem;
+  }
+  .price-note strong{color:var(--gold-light)}
+
+  /* ========== Payment Section ========== */
+  .payment-title-main{
+    text-align:center;
+    font-size:clamp(1.2rem,4vw,1.8rem);
+    margin:2rem 0 1rem;
+    background:var(--gradient-gold);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    font-weight:900;
+  }
+  .payment-subtitle{
+    text-align:center;
+    color:var(--text-muted);
+    margin-bottom:1.8rem;
+    font-size:.88rem;
+    padding:0 .5rem;
+  }
+  .payment-cards{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1rem;
+    margin-bottom:1.5rem;
+  }
+  .payment-card{
+    background:linear-gradient(135deg,rgba(26,31,38,.95),rgba(15,20,25,.95));
+    border:1px solid rgba(201,169,97,.25);
+    border-radius:18px;
+    padding:1.5rem 1.2rem;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    transition:all .4s;
+  }
+  .payment-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:4px;
+    background:var(--gradient-gold);
+  }
+  .payment-card:hover,
+  .payment-card:active{
+    transform:translateY(-5px);
+    border-color:var(--gold);
+    box-shadow:var(--shadow-gold);
+  }
+  .payment-card-circle{
+    width:80px;
+    height:80px;
+    margin:0 auto 1rem;
+    border-radius:50%;
+    background:linear-gradient(135deg,rgba(201,169,97,.15),rgba(201,169,97,.05));
+    border:2px solid var(--gold);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.6rem;
+    font-weight:900;
+    color:var(--gold);
+    box-shadow:0 0 30px rgba(201,169,97,.25);
+    position:relative;
+  }
+  .payment-card-circle::after{
+    content:'';
+    position:absolute;
+    inset:-6px;
+    border-radius:50%;
+    border:1px dashed rgba(201,169,97,.4);
+  }
+  .payment-card-title{
+    font-size:1.1rem;
+    font-weight:900;
+    color:var(--gold-light);
+    margin-bottom:.5rem;
+  }
+  .payment-card-desc{
+    font-size:.85rem;
+    color:var(--text-muted);
+    line-height:1.75;
+  }
+  .installment-note{
+    background:linear-gradient(135deg,rgba(16,185,129,.1),rgba(16,185,129,.05));
+    border:1px solid rgba(16,185,129,.35);
+    border-radius:16px;
+    padding:1.2rem 1.1rem;
+    display:flex;
+    align-items:flex-start;
+    gap:.8rem;
+    font-size:.88rem;
+    line-height:1.75;
+    color:var(--text);
+  }
+  .installment-note i{
+    font-size:1.4rem;
+    color:var(--success);
+    flex-shrink:0;
+    margin-top:.1rem;
+  }
+  .installment-note strong{color:var(--success)}
+
+  /* ========== Access ========== */
+  .access-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:.8rem;
+  }
+  .access-card{
+    background:linear-gradient(135deg,rgba(26,31,38,.95),rgba(15,20,25,.95));
+    border:1px solid rgba(201,169,97,.2);
+    border-radius:14px;
+    padding:1.1rem;
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    transition:all .4s;
+  }
+  .access-card:hover,
+  .access-card:active{
+    transform:translateX(-6px);
+    border-color:var(--gold);
+    box-shadow:var(--shadow-gold);
+  }
+  .access-icon{
+    width:48px;
+    height:48px;
+    background:var(--gradient-gold);
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.2rem;
+    color:var(--dark);
+    flex-shrink:0;
+  }
+  .access-text{
+    color:var(--text);
+    font-size:.88rem;
+    line-height:1.6;
+  }
+
+  /* ========== Conclusion ========== */
+  .conclusion{
+    background:linear-gradient(135deg,rgba(201,169,97,.1),rgba(201,169,97,.05));
+    border:1px solid rgba(201,169,97,.3);
+    border-radius:20px;
+    padding:2rem 1.2rem;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .conclusion::before{
+    content:'';
+    position:absolute;
+    top:-50%;
+    left:-50%;
+    width:200%;
+    height:200%;
+    background:radial-gradient(circle,rgba(201,169,97,.08) 0%,transparent 70%);
+    pointer-events:none;
+  }
+  .conclusion p{
+    font-size:.95rem;
+    line-height:2;
+    color:var(--text);
+    position:relative;
+    z-index:1;
+    text-align:justify;
+  }
+  .conclusion strong{color:var(--gold-light)}
+
+  /* ========== Footer ========== */
+  .footer{
+    background:linear-gradient(135deg,var(--dark-2),var(--dark));
+    border-top:1px solid rgba(201,169,97,.2);
+    padding:2.5rem 1rem 1.5rem;
+    text-align:center;
+    position:relative;
+  }
+  .footer-logo-frame{
+    display:inline-block;
+    background:rgba(201,169,97,.05);
+    border:2px solid var(--gold);
+    border-radius:20px;
+    padding:8px;
+    margin-bottom:1.2rem;
+    box-shadow:0 8px 30px rgba(201,169,97,.25);
+    transition:all .4s;
+    max-width:100%;
+  }
+  .footer-logo-frame:hover{
+    transform:scale(1.03);
+    box-shadow:0 12px 40px rgba(201,169,97,.45);
+  }
+  .footer-logo-frame img{
+    display:block;
+    width:208px;
+    height:160px;
+    max-width:100%;
+    height:auto;
+    object-fit:cover;
+    border-radius:12px;
+    border:2px solid var(--gold-light);
+  }
+  .footer-logo{
+    font-size:1.5rem;
+    font-weight:900;
+    background:var(--gradient-gold);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    margin-bottom:.8rem;
+  }
+  .footer-slogan{
+    color:var(--gold-light);
+    font-size:1rem;
+    font-weight:700;
+    margin-bottom:1.5rem;
+    letter-spacing:.3px;
+    line-height:1.6;
+  }
+  .footer-slogan i{
+    color:var(--gold);
+    margin-left:.4rem;
+  }
+  .footer-divider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:1rem;
+    margin:1.5rem 0;
+    color:var(--gold);
+  }
+  .footer-divider::before,.footer-divider::after{
+    content:'';
+    flex:1;
+    max-width:80px;
+    height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  .back-top{
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    padding:.7rem 1.5rem;
+    background:var(--gradient-gold);
+    color:var(--dark);
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:700;
+    transition:all .3s;
+    margin-top:.8rem;
+    font-size:.88rem;
+  }
+  .back-top:hover,
+  .back-top:active{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow-gold);
+  }
+
+  /* Animations */
+  @keyframes fadeInUp{
+    from{opacity:0;transform:translateY(30px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  @keyframes fadeInDown{
+    from{opacity:0;transform:translateY(-30px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+
+  /* ========== Tablet (640px+) ========== */
+  @media(min-width:640px){
+    .nav{
+      padding:.5rem 0;
+      max-height:none;
+    }
+    .nav-container{
+      padding:0 1.5rem;
+      flex-wrap:wrap;
+      max-height:none;
+    }
+    .nav-links{
+      flex-wrap:wrap;
+      overflow-x:visible;
+      gap:.35rem;
+    }
+    .logo-img{width:44px;height:44px}
+    .logo-text{font-size:1.2rem}
+    .nav-links a{font-size:.85rem;padding:.4rem .85rem}
+
+    .section{padding:4.5rem 1.5rem}
+    .section-title{font-size:clamp(1.8rem,4vw,2.5rem)}
+    .section-subtitle{font-size:1rem}
+
+    .features-grid{grid-template-columns:repeat(2,1fr);gap:1.2rem}
+    .utilities-grid{grid-template-columns:repeat(2,1fr);gap:1.2rem}
+    .units-grid{grid-template-columns:repeat(2,1fr);gap:1.5rem}
+    .access-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
+    .base-prices{grid-template-columns:repeat(4,1fr);gap:1rem}
+    .hero-stats{grid-template-columns:repeat(4,1fr);gap:1.2rem}
+    .hero{padding:4rem 1.5rem}
+    .payment-cards{grid-template-columns:repeat(3,1fr);gap:1.2rem}
+
+    .unit-row{
+      grid-template-columns:repeat(2,1fr);
+      gap:.8rem;
+    }
+
+    .intro-content{padding:2rem 1.8rem}
+    .intro-content p{font-size:1rem}
+    .footer-logo-frame img{width:208px;height:160px}
+    .footer-logo{font-size:1.8rem}
+    .footer-slogan{font-size:1.1rem}
+  }
+
+  /* ========== Desktop (900px+) ========== */
+  @media(min-width:900px){
+    .nav{padding:.6rem 0;max-height:none}
+    .nav-container{padding:0 2rem;max-height:none}
+    .logo-img{width:48px;height:48px}
+    .logo-text{font-size:1.3rem}
+    .nav-links a{font-size:.9rem;padding:.45rem .95rem}
+
+    .section{padding:5.5rem 2rem}
+    .section-title{font-size:clamp(2rem,3.5vw,3rem)}
+
+    .features-grid{grid-template-columns:repeat(3,1fr)}
+    .utilities-grid{grid-template-columns:repeat(2,1fr)}
+    .units-grid{grid-template-columns:repeat(4,1fr);gap:1.8rem}
+    .access-grid{grid-template-columns:repeat(3,1fr)}
+
+    .hero{padding:5rem 2rem;min-height:95vh}
+    .hero h1{font-size:clamp(2.5rem,5vw,5rem)}
+    .hero-stats{grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
+    .stat-card{padding:1.5rem}
+    .stat-icon{font-size:1.8rem}
+    .stat-value{font-size:1.8rem}
+    .stat-label{font-size:.85rem}
+
+    .unit-row{grid-template-columns:repeat(4,1fr);gap:1rem}
+
+    .intro-content{padding:3rem}
+    .conclusion{padding:3.5rem 2.5rem}
+
+    .footer{padding:4rem 2rem 2rem}
+  }
+
+  /* ========== Large Desktop (1200px+) ========== */
+  @media(min-width:1200px){
+    .features-grid{grid-template-columns:repeat(3,1fr)}
+    .units-grid{grid-template-columns:repeat(4,1fr)}
+  }
+
+  /* ========== Small Mobile (max 380px) ========== */
+  @media(max-width:380px){
+    .nav{padding:.3rem 0}
+    .nav-container{padding:0 .5rem;gap:.3rem}
+    .nav-links a{font-size:.68rem;padding:.25rem .55rem}
+    .logo-img{width:28px;height:28px}
+    .logo-text{font-size:.85rem}
+
+    .hero h1{font-size:1.5rem}
+    .hero-tagline{font-size:.82rem;padding:.7rem 1rem}
+    .hero-badge{font-size:.72rem;padding:.35rem .9rem}
+    .stat-value{font-size:1.2rem}
+    .stat-label{font-size:.68rem}
+    .section-title{font-size:1.3rem}
+    .section-tag{font-size:.7rem}
+    .footer-logo-frame img{width:150px;height:auto}
+    .footer-logo{font-size:1.3rem}
+    .footer-slogan{font-size:.88rem}
+    .base-prices{grid-template-columns:1fr}
+    .payment-card-circle{width:70px;height:70px;font-size:1.4rem}
+  }
+
+  /* ========== Touch Device Optimizations ========== */
+  @media(hover:none){
+    .feature-card:hover,
+    .utility-card:hover,
+    .unit-card:hover,
+    .access-card:hover,
+    .stat-card:hover,
+    .base-price:hover,
+    .unit-detail:hover,
+    .payment-card:hover{
+      transform:none;
+    }
+    .feature-card:active,
+    .utility-card:active,
+    .unit-card:active,
+    .access-card:active,
+    .payment-card:active{
+      transform:translateY(-3px);
+      border-color:var(--gold);
+    }
+  }
+
+  /* ========== Landscape Mobile ========== */
+  @media(max-width:900px) and (orientation:landscape){
+    .hero{min-height:auto;padding:2rem 1rem}
+    .hero-stats{grid-template-columns:repeat(4,1fr);margin-top:1.5rem}
+    .hero-tagline{font-size:.9rem;padding:.6rem 1rem;margin-bottom:1rem}
+  }
+
+  /* ========== Prefers Reduced Motion ========== */
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+      animation-duration:.01ms !important;
+      transition-duration:.01ms !important;
+    }
+  }
+
+  ::-webkit-scrollbar{width:8px}
+  ::-webkit-scrollbar-track{background:var(--dark)}
+  ::-webkit-scrollbar-thumb{
+    background:var(--gradient-gold);
+    border-radius:10px;
+  }
+
+  section[id] { scroll-margin-top: 80px; }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-container">
+    <div class="nav-links">
+      <a href="#intro">معرفی</a>
+      <a href="#features">ویژگی‌ها</a>
+      <a href="#utilities">تاسیسات</a>
+      <a href="#units">واحدها</a>
+      <a href="#pricing">قیمت</a>
+      <a href="#access">دسترسی</a>
+    </div>
+    <a href="#top" class="logo">
+      <img src="https://uploadkon.ir/uploads/97b625_26photo-30091278780-x.jpg" alt="لوگوی گل نرگس" class="logo-img">
+      <span class="logo-text">گل نرگس</span>
+    </a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fas fa-star"></i>
+      نگینی درخشان در شمال شرق تهران
+    </div>
+    <h1>مجتمع مسکونی گل نرگس</h1>
+    <p class="hero-subtitle">تجربه‌ای بی‌نظیر از زندگی لوکس در مجاورت پارک جنگلی نیایش</p>
+    <div class="hero-tagline">
+      <i class="fas fa-gem"></i>
+      زندگی مطلوب در جزئیات ساخته می‌شود؛ ما به جزئیات پایبندیم
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-building"></i></div>
+        <div class="stat-value">۹</div>
+        <div class="stat-label">طبقه مسکونی</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-home"></i></div>
+        <div class="stat-value">۳۶</div>
+        <div class="stat-label">واحد مسکونی</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+        <div class="stat-value">۴</div>
+        <div class="stat-label">طبقه مشاعات</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fas fa-award"></i></div>
+        <div class="stat-value">۳۰</div>
+        <div class="stat-label">سال تجربه</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Intro -->
+<section class="section" id="intro">
+  <div class="section-header">
+    <div class="section-tag">✦ معرفی پروژه ✦</div>
+    <h2 class="section-title">نگاهی کلی به مجتمع مسکونی گل نرگس</h2>
+    <div class="divider"><i class="fas fa-diamond"></i></div>
+  </div>
+  <div class="intro-content">
+    <p>
+      مجتمع ۳۶ واحدی گل نرگس در منطقه سرسبز و خوش آب و هوای <strong>سوهانک (شمال شرق تهران - منطقه ۱)</strong> واقع شده است. این پروژه در <strong>۹ طبقه مسکونی</strong> و <strong>۴ طبقه مشاعات</strong> (شامل پارکینگ‌ها، استخر، سالن ورزشی و سایر امکانات رفاهی) طراحی و ساخته شده است.
+    </p>
+    <br>
+    <p>
+      طراحی این ساختمان بر اساس <strong>آیین‌نامه ۲۸۰۰ زلزله ایران</strong> انجام شده و از بهترین متریال و تکنولوژی‌های روز ساخت استفاده شده است. این مجتمع با دارا بودن <strong>واحد سرایداری مجزا</strong>، <strong>اینترنت پرسرعت فیبر نوری با تجهیزات اختصاصی شاتل</strong>، <strong>سیستم صوتی مستقل (آمپلی‌فایر و باند) در هر واحد</strong> و ده‌ها ویژگی منحصر به فرد دیگر، به نگینی درخشان در مجاورت پارک جنگلی نیایش تبدیل شده است.
+    </p>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section" id="features">
+  <div class="section-header">
+    <div class="section-tag">✨ ویژگی‌های خاص ✨</div>
+    <h2 class="section-title">ویژگی‌های خاص و منحصر به فرد</h2>
+    <p class="section-subtitle">ویژگی‌هایی که گل نرگس را به نگینی درخشان تبدیل نموده است</p>
+    <div class="divider"><i class="fas fa-diamond"></i></div>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-couch"></i></div>
+      <span class="feature-badge">لوکس</span>
+      <h3 class="feature-title">لابی فاخر و مجلل در طبقه همکف</h3>
+      <p class="feature-desc">با طراحی منحصر به فردی از سنگ‌های باشکوه امپرادور ترکیه، شومینه برقی، آب‌نمای چشم‌نواز، مبلمان شیک و سیستم‌های صوتی و تصویری.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-swimmer"></i></div>
+      <span class="feature-badge">رفاهی</span>
+      <h3 class="feature-title">استخر، سونا و جکوزی فوق‌العاده</h3>
+      <p class="feature-desc">با موتورخانه مجزا و سیستم نوین تصفیه آب، به همراه رختکن و سرویس بهداشتی لوکس در زیرزمین.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-dumbbell"></i></div>
+      <span class="feature-badge">ورزشی</span>
+      <h3 class="feature-title">سالن ورزشی (Gym) مجهز</h3>
+      <p class="feature-desc">دارای تجهیزات پیشرفته بدنسازی و ورزش.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-glass-cheers"></i></div>
+      <span class="feature-badge">اجتماعی</span>
+      <h3 class="feature-title">سالن چندمنظوره شیک</h3>
+      <p class="feature-desc">برای برپایی جشن‌ها و میهمانی‌ها، دارای آشپزخانه مستقل.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-user-tie"></i></div>
+      <span class="feature-badge">خدماتی</span>
+      <h3 class="feature-title">واحد سرایداری</h3>
+      <p class="feature-desc">به متراژ حدود ۷۰ متر برای اقامت سرایدار و خدمات ساختمان.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+      <span class="feature-badge">منحصر به فرد</span>
+      <h3 class="feature-title">روف گاردن (بام سبز) رویایی</h3>
+      <p class="feature-desc">با تلفیقی از چوب، آجر و سنگ، آب‌نما، آلاچیق‌های ۱۲ نفره، باربیکیو و منظر ۳۶۰ درجه از شهر و کوهستان.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-arrow-up"></i></div>
+      <span class="feature-badge">دسترسی</span>
+      <h3 class="feature-title">دسترسی آسان به بام</h3>
+      <p class="feature-desc">از طریق احداث یک ایستگاه اضافه برای توقف آسانسورها در روف گاردن.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-elevator"></i></div>
+      <span class="feature-badge">آلمانی</span>
+      <h3 class="feature-title">آسانسورهای بزرگ ۱۲ نفره</h3>
+      <p class="feature-desc">با موتور گیرلس مارک زیلابگ آلمان برای افزایش بازده و کاهش صدا و مصرف انرژی.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div>
+      <span class="feature-badge">هوشمند</span>
+      <h3 class="feature-title">سیستم تفکیک و محاسبه انرژی (BTU Meter)</h3>
+      <p class="feature-desc">برای هر واحد با کنتورهای التراسونیک و امکان مشاهده آنلاین مصرف.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+      <span class="feature-badge">هوشمند</span>
+      <h3 class="feature-title">سیستم خانه هوشمند (BMS)</h3>
+      <p class="feature-desc">برای کنترل روشنایی، فن‌کوئل‌ها و سایر منصوبات برقی از طریق موبایل.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-window-maximize"></i></div>
+      <span class="feature-badge">عایق</span>
+      <h3 class="feature-title">پنجره‌های آلومینیومی ترمال بریک</h3>
+      <p class="feature-desc">دو رنگ با لایه جداکننده پلی‌آمید برای شکست حرارت.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+      <span class="feature-badge">انرژی</span>
+      <h3 class="feature-title">عایق‌کاری دیوارهای جانبی</h3>
+      <p class="feature-desc">با فوم ۲ سانتی‌متری و رابیتس، افزون بر مبحث ۱۹ انرژی.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-wifi"></i></div>
+      <span class="feature-badge">اینترنت</span>
+      <h3 class="feature-title">اینترنت پرسرعت</h3>
+      <p class="feature-desc">فیبر نوری با تجهیزات اختصاصی شاتل.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-volume-up"></i></div>
+      <span class="feature-badge">صوتی</span>
+      <h3 class="feature-title">سیستم صوتی مستقل</h3>
+      <p class="feature-desc">هر واحد مجهز به آمپلی‌فایر و باند صوتی مجزا.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-video"></i></div>
+      <span class="feature-badge">امنیت</span>
+      <h3 class="feature-title">سامانه نظارت تصویری (CCTV)</h3>
+      <p class="feature-desc">دوربین‌های مداربسته در لابی‌ها، مشاعات و محوطه با امکان نظارت متمرکز.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Utilities -->
+<section class="section" id="utilities">
+  <div class="section-header">
+    <div class="section-tag">⚙️ تاسیسات ⚙️</div>
+    <h2 class="section-title">تاسیسات پیشرفته و سیستم‌های مکانیکی</h2>
+    <p class="section-subtitle">قلب تپنده ساختمان با تجهیزات مدرن</p>
+    <div class="divider"><i class="fas fa-diamond"></i></div>
+  </div>
+  <div class="utilities-grid">
+    <div class="utility-card">
+      <div class="utility-header">
+        <div class="utility-icon"><i class="fas fa-snowflake"></i></div>
+        <div>
+          <div class="utility-title">تاسیسات سرمایش مرکزی</div>
+          <div class="utility-tag">اینورتر</div>
+        </div>
+      </div>
+      <p class="utility-desc">دو دستگاه چیلر هوا خنک اینورتر مارک تهویه دماوند با موتورهای دانفوس که هر یک به تنهایی برای ایجاد دمای مناسب کفایت می‌کند.</p>
+      <div class="utility-feature">
+        <i class="fas fa-check-circle"></i>
+        <span>ویژگی: مصرف بهینه انرژی و کارکرد کم‌صدا</span>
+      </div>
+    </div>
+    <div class="utility-card">
+      <div class="utility-header">
+        <div class="utility-icon"><i class="fas fa-fire"></i></div>
+        <div>
+          <div class="utility-title">تاسیسات گرمایش مرکزی</div>
+          <div class="utility-tag">راندمان بالا</div>
+        </div>
+      </div>
+      <p class="utility-desc">دو دستگاه دیگ حرارتی سه‌پاس با راندمان بالا که مصرف گاز را بهینه می‌کند.</p>
+      <div class="utility-feature">
+        <i class="fas fa-check-circle"></i>
+        <span>ویژگی: کاهش هزینه‌های گاز و گرمایش یکنواخت</span>
+      </div>
+    </div>
+    <div class="utility-card">
+      <div class="utility-header">
+        <div class="utility-icon"><i class="fas fa-cogs"></i></div>
+        <div>
+          <div class="utility-title">موتورخانه پیشرفته</div>
+          <div class="utility-tag">هوشمند</div>
+        </div>
+      </div>
+      <p class="utility-desc">مجهز به پمپ‌های آبرسانی گرانفوس و تجهیزات موتورخانه هوشمند.</p>
+      <div class="utility-feature">
+        <i class="fas fa-check-circle"></i>
+        <span>ویژگی: کنترل خودکار و بهینه‌سازی مصرف انرژی</span>
+      </div>
+    </div>
+    <div class="utility-card">
+      <div class="utility-header">
+        <div class="utility-icon"><i class="fas fa-bolt"></i></div>
+        <div>
+          <div class="utility-title">ژنراتور برق اضطراری</div>
+          <div class="utility-tag">۷۰ کاوا</div>
+        </div>
+      </div>
+      <p class="utility-desc">با راه‌اندازی اتوماتیک بلافاصله پس از قطع برق برای آماده به کار بودن تجهیزات مشاعی.</p>
+      <div class="utility-feature">
+        <i class="fas fa-check-circle"></i>
+        <span>ویژگی: تامین برق پایدار برای آسانسور و موتورخانه در زمان قطعی برق</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Units -->
+<section class="section" id="units">
+  <div class="section-header">
+    <div class="section-tag">🏠 مشخصات واحدها 🏠</div>
+    <h2 class="section-title">۴ تیپ واحد با طراحی منحصر به فرد</h2>
+    <div class="divider"><i class="fas fa-diamond"></i></div>
+  </div>
+  <div class="units-grid">
+    <div class="unit-card">
+      <div class="unit-header">
+        <div class="unit-type">تیپ ۱</div>
+        <div class="unit-series">واحدهای سری ۱</div>
+      </div>
+      <div class="unit-body">
+        <div class="unit-info">
+          <i class="fas fa-ruler-combined"></i>
+          <div>
+            <div class="unit-info-label">متراژ</div>
+            <div class="unit-info-value">۱۵۳ مترمربع</div>
+          </div>
+        </div>
+        <div class="unit-info">
+          <i class="fas fa-bed"></i>
+          <div>
+            <div class="unit-info-label">خواب‌ها</div>
+            <div class="unit-info-value">سه خواب (یک مستر + دو فرعی)</div>
+          </div>
+        </div>
+        <div class="unit-info">
+          <i class="fas fa-bath"></i>
+          <div>
+            <div class="unit-info-label">سرویس بهداشتی</div>
+            <div class="unit-info-value">سه سرویس (دو فرنگی با دوش + یک ایرانی)</div>
+          </div>
+        </div>
+        <div class="unit-info">
+          <i class="fas fa-paint-brush"></i>
+          <div>
+            <div class="unit-info-label">طراحی</div>
+            <div class="unit-info-value">کلاسیک</div>
+          </div>
+        </div>
+        <div class="unit-feature">
+          <i class="fas fa-tree"></i>
+          دارای بالکن و مشرف به پارک جنگلی نیایش
+        </div>
+      </div>
+    </div>
+    <div class="unit-card">
+      <div class="unit-header">
+        <div class="unit-type">تیپ ۲</div>
+        <div class="unit-series">واحدهای سری ۲</div>
+      </div>
+      <div class="unit-body">
+        <div class="unit-info">
+          <i class="fas fa-ruler-combined"></i>
+          <div>
+            <div class="unit-info-label">متراژ</div>
+            <div class="unit-info-value">۱۲۵ مترمربع</div>
+          </div>
+        </div>
+        <div class="unit-info">
+          <i class="fas fa-bed"></i>
+          <div>
+            <div class="unit-info-label">خواب‌ها</div>
+            <div class="unit-info-value">سه خواب (یک مستر + دو فرعی)</div>
+          </div>
+        </div>
+        <div class="unit-info">
+          <i class="fas fa-bath"></i>
+          <div>
+            <div class="unit-info-label">سرویس بهداشتی</div>
+            <div class="unit-info-value">سه سرویس (دو فرنگی با دوش + یک ایرانی)</div>
+          </div>
+        </div>
+        <div class="unit-info">
+          <i class="fas fa-paint-brush"></i>
+          <div>
+            <div class="unit-info-label">طراحی</div>
+            <div class="unit-info-value">کلاسیک</div>
+          </div>
+        </div>
+        <div class="unit-feature">
+          <i class="fas fa-tree"></i>
+          دارای بالکن و مشرف به پارک جنگلی نیایش
+        </div>
+      </div>
+    </div>
+    <div class="unit-card">
+      <div class="unit-header">
+        <div class="unit-type">تیپ ۳</div>
+        <div class="unit-series">واحدهای سری ۳</div>
+      </div>
+      <div class="unit-body">
+        <div class="unit-info">
+          <i class="fas fa-ruler-combined"></i>
+          <div>
+            <div class="unit-info-label">متراژ</div>
+            <div class="unit-info-value">۱۲۳ مترمربع</div>
+          </div>
+        </div>
+        <div class="unit-info">
+          <i class="fas fa-bed"></i>
+          <div>
+            <div class="unit-info-label">خواب‌ها</div>
+            <div class="unit-info-value">سه خواب (یک مستر + دو فرعی)</div>
+          </div>
+        </div>
+        <div class="unit-info">
+          <i class="fas fa-bath"></i>
+          <div>
+            <div class="unit-info-label">سرویس بهداشتی</div>
+            <div class="unit-info-value">سه سرویس (دو فرنگی با دوش + یک ایرانی)</div>
+          </div>
+        </div>
+        <div class="unit-info">
+          <i class="fas fa-paint-brush"></i>
+          <div>
+            <div class="unit-info-label">طراحی</div>
+            <div class="unit-info-value">مدرن</div>
+          </div>
+        </div>
+        <div class="unit-feature">
+          <i class="fas fa-tree"></i>
+          دارای بالکن و مشرف به پارک جنگلی نیایش
+        </div>
+      </div>
+    </div>
+    <div class="unit-card">
+      <div class="unit-header">
+        <div class="unit-type">تیپ ۴</div>
+        <div class="unit-series">واحدهای سری ۴</div>
+      </div>
+      <div class="unit-body">
+        <div class="unit-info">
+          <i class="fas fa-ruler-combined"></i>
+          <div>
+            <div class="unit-info-label">متراژ</div>
+            <div class="unit-info-value">۱۰۷ مترمربع</div>
+          </div>
+        </div>
+        <div class="unit-info">
+          <i class="fas fa-bed"></i>
+          <div>
+            <div class="unit-info-label">خواب‌ها</div>
+            <div class="unit-info-value">دو خواب (یک مستر + یک فرعی)</div>
+          </div>
+        </div>
+        <div class="unit-info">
+          <i class="fas fa-bath"></i>
+          <div>
+            <div class="unit-info-label">سرویس بهداشتی</div>
+            <div class="unit-info-value">دو سرویس (یک فرنگی با دوش + یک ایرانی)</div>
+          </div>
+        </div>
+        <div class="unit-info">
+          <i class="fas fa-paint-brush"></i>
+          <div>
+            <div class="unit-info-label">طراحی</div>
+            <div class="unit-info-value">مدرن</div>
+          </div>
+        </div>
+        <div class="unit-feature">
+          <i class="fas fa-city"></i>
+          دارای بالکن و دارای ویوی شهر
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="section" id="pricing">
+  <div class="section-header">
+    <div class="section-tag">💰 قیمت و پرداخت 💰</div>
+    <h2 class="section-title">جزئیات قیمت‌گذاری و شرایط پرداخت</h2>
+    <div class="divider"><i class="fas fa-diamond"></i></div>
+  </div>
+
+  <div class="pricing-intro">
+    <p>
+      قیمت پایه هر مترمربع واحدهای ساختمان مجلل گل نرگس با <strong>۱۰٪ تخفیف نسبت به ساختمان‌های هم‌تراز منطقه</strong>؛ بر اساس تیپ واحد و با احتساب <strong>یک واحد پارکینگ و یک باب انباری</strong> محاسبه شده است. قیمت هر طبقه از روی قیمت طبقه قبل با اعمال <strong>حدود ۳٪ افزایش</strong> محاسبه می‌شود.
+    </p>
+  </div>
+
+  <div class="base-prices">
+    <div class="base-price">
+      <div class="base-price-label">تیپ ۱</div>
+      <div class="base-price-value">۶۲۵ میلیون تومان / مترمربع</div>
+      <div class="base-price-area">۱۵۳ مترمربع</div>
+    </div>
+    <div class="base-price">
+      <div class="base-price-label">تیپ ۲</div>
+      <div class="base-price-value">۶۰۰ میلیون تومان / مترمربع</div>
+      <div class="base-price-area">۱۲۵ مترمربع</div>
+    </div>
+    <div class="base-price">
+      <div class="base-price-label">تیپ ۳</div>
+      <div class="base-price-value">۶۰۰ میلیون تومان / مترمربع</div>
+      <div class="base-price-area">۱۲۳ مترمربع</div>
+    </div>
+    <div class="base-price">
+      <div class="base-price-label">تیپ ۴</div>
+      <div class="base-price-value">۵۷۵ میلیون تومان / مترمربع</div>
+      <div class="base-price-area">۱۰۷ مترمربع</div>
+    </div>
+  </div>
+
+  <!-- Floor 1 -->
+  <div class="floor-card">
+    <div class="floor-header"><i class="fas fa-building"></i> طبقه ۱</div>
+    <div class="floor-body">
+      <div class="unit-row">
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۱۱</div>
+          <div class="unit-meta">تیپ ۱ | ۱۵۳ مترمربع</div>
+          <div class="unit-meta">هر متر: ۶۲۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۹۵.۶۲۵ میلیارد تومان</div>
+        </div>
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۱۲</div>
+          <div class="unit-meta">تیپ ۲ | ۱۲۵ مترمربع</div>
+          <div class="unit-meta">هر متر: ۶۰۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۷۵.۰۰۰ میلیارد تومان</div>
+        </div>
+        <div class="unit-detail sold">
+          <div class="unit-number">واحد ۱۳</div>
+          <div class="unit-meta">تیپ ۳</div>
+          <div class="sold-badge"><i class="fas fa-check"></i> واگذار شده</div>
+        </div>
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۱۴</div>
+          <div class="unit-meta">تیپ ۴ | متراژ مؤثر: ۱۴۲ مترمربع</div>
+          <div class="unit-meta">هر متر: ۵۷۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۸۱.۶۵۰ میلیارد تومان</div>
+          <div class="unit-special">
+            <i class="fas fa-star"></i> دارای حدود ۸۰ مترمربع حیاط اختصاصی (۳۵ مترمربع به متراژ مؤثر اضافه شده است)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floor 2,3,4 -->
+  <div class="floor-card">
+    <div class="floor-header"><i class="fas fa-building"></i> طبقات ۲، ۳ و ۴</div>
+    <div class="floor-body">
+      <div class="all-sold">
+        <i class="fas fa-check-circle"></i> کلیه واحدها واگذار شده <i class="fas fa-check-circle"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floor 5 -->
+  <div class="floor-card">
+    <div class="floor-header"><i class="fas fa-building"></i> طبقه ۵</div>
+    <div class="floor-body">
+      <div class="unit-row">
+        <div class="unit-detail sold">
+          <div class="unit-number">واحد ۵۱</div>
+          <div class="unit-meta">تیپ ۱</div>
+          <div class="sold-badge"><i class="fas fa-check"></i> واگذار شده</div>
+        </div>
+        <div class="unit-detail sold">
+          <div class="unit-number">واحد ۵۲</div>
+          <div class="unit-meta">تیپ ۲</div>
+          <div class="sold-badge"><i class="fas fa-check"></i> واگذار شده</div>
+        </div>
+        <div class="unit-detail sold">
+          <div class="unit-number">واحد ۵۳</div>
+          <div class="unit-meta">تیپ ۳</div>
+          <div class="sold-badge"><i class="fas fa-check"></i> واگذار شده</div>
+        </div>
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۵۴</div>
+          <div class="unit-meta">تیپ ۴ | ۱۰۷ مترمربع</div>
+          <div class="unit-meta">هر متر: ۶۵۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۷۰.۰۸۵ میلیارد تومان</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floor 6 -->
+  <div class="floor-card">
+    <div class="floor-header"><i class="fas fa-building"></i> طبقه ۶</div>
+    <div class="floor-body">
+      <div class="unit-row">
+        <div class="unit-detail sold">
+          <div class="unit-number">واحد ۶۱</div>
+          <div class="unit-meta">تیپ ۱</div>
+          <div class="sold-badge"><i class="fas fa-check"></i> واگذار شده</div>
+        </div>
+        <div class="unit-detail sold">
+          <div class="unit-number">واحد ۶۲</div>
+          <div class="unit-meta">تیپ ۲</div>
+          <div class="sold-badge"><i class="fas fa-check"></i> واگذار شده</div>
+        </div>
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۶۳</div>
+          <div class="unit-meta">تیپ ۳ | ۱۲۳ مترمربع</div>
+          <div class="unit-meta">هر متر: ۷۰۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۸۶.۷۱۵ میلیارد تومان</div>
+        </div>
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۶۴</div>
+          <div class="unit-meta">تیپ ۴ | ۱۰۷ مترمربع</div>
+          <div class="unit-meta">هر متر: ۶۷۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۷۲.۲۲۵ میلیارد تومان</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floor 7 -->
+  <div class="floor-card">
+    <div class="floor-header"><i class="fas fa-building"></i> طبقه ۷</div>
+    <div class="floor-body">
+      <div class="unit-row">
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۷۱</div>
+          <div class="unit-meta">تیپ ۱ | ۱۵۳ مترمربع</div>
+          <div class="unit-meta">هر متر: ۷۶۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۱۱۶.۲۸۰ میلیارد تومان</div>
+        </div>
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۷۲</div>
+          <div class="unit-meta">تیپ ۲ | ۱۲۵ مترمربع</div>
+          <div class="unit-meta">هر متر: ۷۳۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۹۱.۲۵۰ میلیارد تومان</div>
+        </div>
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۷۳</div>
+          <div class="unit-meta">تیپ ۳ | ۱۲۳ مترمربع</div>
+          <div class="unit-meta">هر متر: ۷۳۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۸۹.۷۹۰ میلیارد تومان</div>
+        </div>
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۷۴</div>
+          <div class="unit-meta">تیپ ۴ | ۱۰۷ مترمربع</div>
+          <div class="unit-meta">هر متر: ۷۰۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۷۴.۹۰۰ میلیارد تومان</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floor 8 -->
+  <div class="floor-card">
+    <div class="floor-header"><i class="fas fa-building"></i> طبقه ۸</div>
+    <div class="floor-body">
+      <div class="unit-row">
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۸۱</div>
+          <div class="unit-meta">تیپ ۱ | ۱۵۳ مترمربع</div>
+          <div class="unit-meta">هر متر: ۷۸۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۱۲۰.۱۰۵ میلیارد تومان</div>
+        </div>
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۸۲</div>
+          <div class="unit-meta">تیپ ۲ | ۱۲۵ مترمربع</div>
+          <div class="unit-meta">هر متر: ۷۵۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۹۴.۳۷۵ میلیارد تومان</div>
+        </div>
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۸۳</div>
+          <div class="unit-meta">تیپ ۳ | ۱۲۳ مترمربع</div>
+          <div class="unit-meta">هر متر: ۷۵۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۹۲.۸۶۵ میلیارد تومان</div>
+        </div>
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۸۴</div>
+          <div class="unit-meta">تیپ ۴ | ۱۰۷ مترمربع</div>
+          <div class="unit-meta">هر متر: ۷۲۵ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۷۷.۵۷۵ میلیارد تومان</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floor 9 -->
+  <div class="floor-card">
+    <div class="floor-header"><i class="fas fa-building"></i> طبقه ۹</div>
+    <div class="floor-body">
+      <div class="unit-row">
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۹۱</div>
+          <div class="unit-meta">تیپ ۱ | ۱۵۳ مترمربع</div>
+          <div class="unit-meta">هر متر: ۸۱۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۱۲۳.۹۳۰ میلیارد تومان</div>
+        </div>
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۹۲</div>
+          <div class="unit-meta">تیپ ۲ | ۱۲۵ مترمربع</div>
+          <div class="unit-meta">هر متر: ۷۸۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۹۷.۵۰۰ میلیارد تومان</div>
+        </div>
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۹۳</div>
+          <div class="unit-meta">تیپ ۳ | ۱۲۳ مترمربع</div>
+          <div class="unit-meta">هر متر: ۷۸۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۹۵.۹۴۰ میلیارد تومان</div>
+        </div>
+        <div class="unit-detail">
+          <div class="unit-number">واحد ۹۴</div>
+          <div class="unit-meta">تیپ ۴ | ۱۰۷ مترمربع</div>
+          <div class="unit-meta">هر متر: ۷۵۰ میلیون تومان</div>
+          <div class="unit-price">قیمت کل: ۸۰.۲۵۰ میلیارد تومان</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="price-note">
+    <i class="fas fa-info-circle"></i>
+    <div><strong>توجه:</strong> قیمت‌های فوق کاملاً مقطوع و تا <strong>۳۰ خرداد ۱۴۰۵</strong> اعتبار دارد.</div>
+  </div>
+
+  <!-- Payment Section -->
+  <h3 class="payment-title-main">شرایط و نحوه پرداخت</h3>
+  <p class="payment-subtitle">با توجه به اینکه واحدها آماده تحویل هستند، شرایط پرداخت به شرح زیر است:</p>
+
+  <div class="payment-cards">
+    <div class="payment-card">
+      <div class="payment-card-circle">۵۰٪</div>
+      <div class="payment-card-title">زمان عقد قرارداد</div>
+      <div class="payment-card-desc">۵۰ درصد مبلغ کل در زمان عقد قرارداد پرداخت می‌شود.</div>
+    </div>
+    <div class="payment-card">
+      <div class="payment-card-circle">۴۵٪</div>
+      <div class="payment-card-title">حداکثر طی دو ماه</div>
+      <div class="payment-card-desc">همزمان با تحویل آپارتمان پرداخت می‌شود.</div>
+    </div>
+    <div class="payment-card">
+      <div class="payment-card-circle">۵٪</div>
+      <div class="payment-card-title">دفترخانه</div>
+      <div class="payment-card-desc">در زمان حضور در دفترخانه و انتقال سند پرداخت می‌شود.</div>
+    </div>
+  </div>
+
+  <div class="installment-note">
+    <i class="fas fa-credit-card"></i>
+    <div><strong>امکان تقسیط:</strong> برای سهولت در خرید، امکان تقسیط مبالغ پرداختی تا یک سال و با شرایط بانکی وجود دارد.</div>
+  </div>
+</section>
+
+<!-- Access -->
+<section class="section" id="access">
+  <div class="section-header">
+    <div class="section-tag">📍 دسترسی‌ها 📍</div>
+    <h2 class="section-title">دسترسی‌های محلی</h2>
+    <p class="section-subtitle">موقعیت ممتاز و امکانات اطراف پروژه</p>
+    <div class="divider"><i class="fas fa-diamond"></i></div>
+  </div>
+  <div class="access-grid">
+    <div class="access-card">
+      <div class="access-icon"><i class="fas fa-mountain"></i></div>
+      <div class="access-text">دسترسی آسان به رشته‌کوه‌های البرز</div>
+    </div>
+    <div class="access-card">
+      <div class="access-icon"><i class="fas fa-tree"></i></div>
+      <div class="access-text">همجواری با پارک جنگلی نیایش به مساحت ۱۶ هکتار</div>
+    </div>
+    <div class="access-card">
+      <div class="access-icon"><i class="fas fa-shopping-bag"></i></div>
+      <div class="access-text">دسترسی آسان به مراکز تجاری ابریشم، نخل، مروارید و الماس</div>
+    </div>
+    <div class="access-card">
+      <div class="access-icon"><i class="fas fa-gas-pump"></i></div>
+      <div class="access-text">نزدیکی به جایگاه سوخت پمپ بنزین شهرک شهید محلاتی</div>
+    </div>
+    <div class="access-card">
+      <div class="access-icon"><i class="fas fa-hospital"></i></div>
+      <div class="access-text">نزدیکی به بیمارستان‌های فوق تخصصی محک و نیکان</div>
+    </div>
+  </div>
+</section>
+
+<!-- Conclusion -->
+<section class="section" id="conclusion">
+  <div class="section-header">
+    <div class="section-tag">❋ نتیجه‌گیری ❋</div>
+    <div class="divider"><i class="fas fa-diamond"></i></div>
+  </div>
+  <div class="conclusion">
+    <p>
+      مجتمع مسکونی گل نرگس با بهره‌گیری از <strong>۳۰ سال تجربه گروه مهندسی گل نرگس</strong>، توانسته است استاندارد جدیدی از زندگی لوکس و مدرن را در منطقه سوهانک تهران ارائه دهد. ترکیب طراحی منحصر به فرد، امکانات رفاهی بی‌نظیر و سیستم‌های هوشمند به همراه تاسیسات پیشرفته مکانیکی، این پروژه را به یکی از مطلوب‌ترین گزینه‌های سرمایه‌گذاری و سکونت در شمال تهران تبدیل کرده است.
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-divider"><i class="fas fa-diamond"></i></div>
+  <div class="footer-logo-frame">
+    <img src="https://uploadkon.ir/uploads/97b625_26photo-30091278780-x.jpg" alt="لوگوی گروه مهندسی گل نرگس">
+  </div>
+  <div class="footer-logo">گروه مهندسی گل نرگس</div>
+  <p class="footer-slogan">
+    <i class="fas fa-handshake"></i>
+    اعتماد شما، سرمایه ماندگار ماست
+  </p>
+  <div class="footer-divider"><i class="fas fa-diamond"></i></div>
+  <a href="#top" class="back-top">
+    <i class="fas fa-arrow-up"></i>
+    بازگشت به بالا
+  </a>
+</footer>
+
+</body>
+</html>
